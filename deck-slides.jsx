@@ -215,7 +215,6 @@ window.IntroSlide = () => {
                 {/* FLOATING GREETINGS */}
                 {/* ================================================= */}
 
-
                 {/* GERMAN */}
 
                 <div
@@ -546,6 +545,54 @@ window.IntroSlide = () => {
 
 
                 {/* ================================================= */}
+                {/* LET'S BEGIN — CENTER */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        zIndex: 30,
+
+                        left: "50%",
+                        top: "50%",
+
+                        transform: curtain
+                            ? "translate(-50%, -50%) scale(1)"
+                            : "translate(-50%, -50%) scale(0.92)",
+
+                        opacity:
+                            curtain ? 1 : 0,
+
+                        transition:
+                            "opacity 0.8s ease, transform 1s cubic-bezier(0.22,1,0.36,1)",
+
+                        pointerEvents: "none",
+
+                        color: "#FFFFFF",
+
+                        fontSize:
+                            "clamp(42px, 5vw, 80px)",
+
+                        fontWeight: 700,
+
+                        letterSpacing: "-0.06em",
+
+                        lineHeight: 0.9,
+
+                        textAlign: "center",
+
+                        whiteSpace: "nowrap",
+
+                        textShadow:
+                            "0 0 40px rgba(255,255,255,0.12)"
+                    }}
+                >
+                    Let's begin!
+                </div>
+
+
+                {/* ================================================= */}
                 {/* CENTER CONTENT */}
                 {/* ================================================= */}
 
@@ -825,7 +872,7 @@ window.IntroSlide = () => {
                     style={{
                         position: "absolute",
 
-                        zIndex: 25,
+                        zIndex: 35,
 
                         left: "50%",
                         bottom: "38px",
@@ -1176,7 +1223,7 @@ window.MeetTheTeamSlide = () => {
                                 margin: 0,
                                 color: "white",
                                 fontSize: "clamp(70px, 8vw, 118px)",
-                                lineHeight: "0.88",
+                                lineHeight: "0.95",
                                 letterSpacing: "-0.065em"
                             }}
                         >
@@ -1185,14 +1232,19 @@ window.MeetTheTeamSlide = () => {
 
                             <span
                                 style={{
+                                    display: "inline-block",
+                                    padding: "0.08em 0.05em 0.12em 0",
+                                    margin: "-0.08em 0 -0.12em 0",
+
                                     background:
                                         "linear-gradient(90deg,#ffffff 0%,#8EA4FF 48%,#61E6D8 100%)",
+
                                     WebkitBackgroundClip: "text",
                                     WebkitTextFillColor: "transparent"
                                 }}
                             >
-                                the people.
-                            </span>
+                            the people.
+                        </span>
                         </h1>
 
 
@@ -1972,7 +2024,8 @@ window.SharedGoalSlide = () => {
                                 color: "white",
                                 fontSize: "clamp(62px, 7vw, 105px)",
                                 lineHeight: "0.92",
-                                letterSpacing: "-0.065em"
+                                letterSpacing: "-0.065em",
+                                overflow: "visible"
                             }}
                         >
                             Different roles.
@@ -1980,13 +2033,21 @@ window.SharedGoalSlide = () => {
 
                             <span
                                 style={{
+                                    display: "inline-block",
+                                    paddingTop: "0.08em",
+                                    paddingBottom: "0.08em",
+                                    paddingRight: "0.08em",
+
                                     background:
                                         "linear-gradient(90deg,#ffffff,#8EA4FF,#61E6D8)",
+
                                     WebkitBackgroundClip: "text",
-                                    WebkitTextFillColor: "transparent"
+                                    WebkitTextFillColor: "transparent",
+
+                                    overflow: "visible"
                                 }}
                             >
-                                One product.
+                            One product.
                             </span>
                         </h1>
 
@@ -2964,8 +3025,9 @@ window.EventPlatformSlide = () => {
                         style={{
                             margin: 0,
                             fontSize: "clamp(48px, 5vw, 76px)",
-                            lineHeight: "0.9",
+                            lineHeight: "0.95",
                             letterSpacing: "-0.065em",
+                            overflow: "visible",
                             background:
                                 "linear-gradient(90deg, #d7fcfc 0%, #d7fcfc 38%, #8FEDE5 72%, #61E6D8 100%)",
                             WebkitBackgroundClip: "text",
@@ -2978,14 +3040,27 @@ window.EventPlatformSlide = () => {
 
                         <span
                             style={{
+                                display: "inline-block",
+
+                                /* gives the font enough room so descenders don't get clipped */
+                                paddingTop: "0.06em",
+                                paddingBottom: "0.16em",
+                                paddingRight: "0.08em",
+
                                 background:
                                     "linear-gradient(180deg, #61E6D8 0%, #3BBEB5 50%, #16756F 100%)",
+
                                 WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent"
+                                backgroundClip: "text",
+
+                                WebkitTextFillColor: "transparent",
+                                color: "transparent",
+
+                                overflow: "visible"
                             }}
                         >
-                            Every event moment.
-                        </span>
+                        Every event moment.
+                         </span>
                     </h1>
                 </div>
 
@@ -3324,6 +3399,291 @@ window.EventPlatformSlide = () => {
 
 /* VARIANT 2 - BUT FINAL */
 window.FromVisionToWorkSlide = () => {
+    return (
+        <SlideRoot>
+            <div
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                    background: "#040914",
+                    color: "white",
+                    fontFamily: "Inter, -apple-system, sans-serif"
+                }}
+            >
+                <style>
+                    {`
+            @keyframes pulseGlow {
+              0%, 100% { transform: scale(1); opacity: 0.8; }
+              50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 12px rgba(97,230,216,0.6)); }
+            }
+            @keyframes dashFlow {
+              0% { stroke-dashoffset: 40; }
+              100% { stroke-dashoffset: 0; }
+            }
+            @keyframes alertPulse {
+              0%, 100% { box-shadow: 0 0 15px rgba(255,143,163,0.2); }
+              50% { box-shadow: 0 0 30px rgba(255,143,163,0.5); }
+            }
+          `}
+                </style>
+
+                {/* BACKGROUND AMBIENT GRADIENTS */}
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        background:
+                            "radial-gradient(circle at 20% 30%, rgba(142,164,255,0.07), transparent 40%), radial-gradient(circle at 80% 70%, rgba(97,230,216,0.06), transparent 40%)",
+                        pointerEvents: "none"
+                    }}
+                />
+
+                {/* HEADER */}
+                <div style={{ position: "absolute", top: "40px", left: "60px", zIndex: 10 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+                        <div style={{ width: "28px", height: "2px", background: "linear-gradient(90deg,#8EA4FF,#61E6D8)" }} />
+                        <span style={{ color: "#61E6D8", fontFamily: "monospace", fontSize: "10px", fontWeight: 700, letterSpacing: ".25em" }}>
+              WORKFLOW PIPELINE
+            </span>
+                    </div>
+                    <h1 style={{ margin: 0, fontSize: "44px", fontWeight: 800, letterSpacing: "-0.04em", lineHeight: "1" }}>
+                        How a JIRA ticket <span style={{ background: "linear-gradient(90deg, #8EA4FF, #61E6D8)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>becomes an AEM feature.</span>
+                    </h1>
+                </div>
+
+                {/* TOP RIGHT SUBTITLE */}
+                <div style={{ position: "absolute", top: "48px", right: "60px", color: "rgba(255,255,255,0.3)", fontFamily: "monospace", fontSize: "9px", letterSpacing: "2px" }}>
+                    DEV → INTEGRATION → QA → DEPLOY
+                </div>
+
+                {/* MAIN BOARD FLOW CONTAINER */}
+                <div style={{ position: "absolute", inset: "140px 40px 40px 40px" }}>
+
+                    {/* SECTION CONTAINERS / STAGES (BACKGROUND CARDS) */}
+                    <div style={{ position: "absolute", left: "1.5%", width: "35%", top: "40px", bottom: "30px", background: "rgba(255,255,255,0.015)", border: "1px solid rgba(142,164,255,0.08)", borderRadius: "20px", pointerEvents: "none" }}>
+                        <span style={{ position: "absolute", top: "16px", left: "20px", fontSize: "9px", fontFamily: "monospace", color: "#8EA4FF", letterSpacing: "2px", opacity: 0.6 }}>01 / DEVELOPMENT</span>
+                    </div>
+
+                    <div style={{ position: "absolute", left: "38%", width: "40%", top: "40px", bottom: "30px", background: "rgba(255,255,255,0.015)", border: "1px solid rgba(97,230,216,0.08)", borderRadius: "20px", pointerEvents: "none" }}>
+                        <span style={{ position: "absolute", top: "16px", left: "20px", fontSize: "9px", fontFamily: "monospace", color: "#61E6D8", letterSpacing: "2px", opacity: 0.6 }}>02 / QUALITY ASSURANCE</span>
+                    </div>
+
+                    <div style={{ position: "absolute", left: "79.5%", width: "19%", top: "40px", bottom: "30px", background: "rgba(255,255,255,0.015)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "20px", pointerEvents: "none" }}>
+                        <span style={{ position: "absolute", top: "16px", left: "20px", fontSize: "9px", fontFamily: "monospace", color: "#FFF", letterSpacing: "2px", opacity: 0.6 }}>03 / RELEASE</span>
+                    </div>
+
+                    <svg viewBox="0 0 1300 460" preserveAspectRatio="xMidYMid meet" style={{ width: "100%", height: "100%", overflow: "visible" }}>
+                        <defs>
+                            <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#8EA4FF" stopOpacity="0.2" />
+                                <stop offset="100%" stopColor="#8EA4FF" stopOpacity="0.9" />
+                            </linearGradient>
+
+                            <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#8EA4FF" />
+                                <stop offset="100%" stopColor="#61E6D8" />
+                            </linearGradient>
+
+                            <linearGradient id="redGrad" x1="100%" y1="0%" x2="0%" y2="0%">
+                                <stop offset="0%" stopColor="#FF8FA3" stopOpacity="0.9" />
+                                <stop offset="100%" stopColor="#8EA4FF" stopOpacity="0.4" />
+                            </linearGradient>
+
+                            <marker id="arrBlue" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                                <polygon points="0 0, 7 3.5, 0 7" fill="#8EA4FF" />
+                            </marker>
+                            <marker id="arrGreen" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                                <polygon points="0 0, 7 3.5, 0 7" fill="#61E6D8" />
+                            </marker>
+                            <marker id="arrRed" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                                <polygon points="0 0, 7 3.5, 0 7" fill="#FF8FA3" />
+                            </marker>
+                        </defs>
+
+                        {/* --- CONNECTIONS & PATHS --- */}
+
+                        {/* Ticket Arrives -> Dev Build */}
+                        <path
+                            d="M 115 240 L 185 240"
+                            stroke="#8EA4FF"
+                            strokeWidth="2.5"
+                            fill="none"
+                            markerEnd="url(#arrBlue)"
+                        />
+
+                        {/* Dev Build -> Backend */}
+                        <path d="M 235 210 Q 235 150 280 150" stroke="#8EA4FF" strokeWidth="2" opacity="0.7" fill="none" markerEnd="url(#arrBlue)" />
+
+                        {/* Dev Build -> Frontend */}
+                        <path d="M 235 290 Q 235 350 280 350" stroke="#8EA4FF" strokeWidth="2" opacity="0.7" fill="none" markerEnd="url(#arrBlue)" />
+
+                        {/* Backend & Frontend -> Sync */}
+                        <path d="M 380 150 C 440 150, 430 250, 480 250" stroke="url(#greenGrad)" strokeWidth="2" fill="none" markerEnd="url(#arrGreen)" />
+                        <path d="M 380 350 C 440 350, 430 250, 480 250" stroke="url(#greenGrad)" strokeWidth="2" fill="none" markerEnd="url(#arrGreen)" />
+
+                        {/* Support Needed: Dev -> Mentors */}
+                        <path
+                            d="M 235 190 Q 235 65 670 65 L 670 95"
+                            stroke="#8EA4FF"
+                            strokeWidth="1.5"
+                            strokeDasharray="5 5"
+                            opacity="0.4"
+                            fill="none"
+                            markerEnd="url(#arrBlue)"
+                        />
+
+                        {/* Support Needed: QA -> Mentors */}
+                        <path
+                            d="M 830 210 Q 830 75 700 75 Q 670 75 700 100"
+                            stroke="#61E6D8"
+                            strokeWidth="1.5"
+                            strokeDasharray="5 5"
+                            opacity="0.6"
+                            fill="none"
+                            markerEnd="url(#arrGreen)"
+                        />
+
+                        {/* Sync -> QA Verification */}
+                        <path d="M 540 250 L 620 250" stroke="#61E6D8" strokeWidth="2.5" fill="none" markerEnd="url(#arrGreen)" />
+
+                        {/* QA Verification -> QA In Progress */}
+                        <path d="M 720 250 L 780 250" stroke="#61E6D8" strokeWidth="2.5" fill="none" markerEnd="url(#arrGreen)" />
+
+                        {/* QA In Progress -> Bug Check */}
+                        <path d="M 880 250 L 960 250" stroke="#61E6D8" strokeWidth="2.5" fill="none" markerEnd="url(#arrGreen)" />
+
+                        {/* Bug Check -> Closed */}
+                        <path d="M 1040 250 L 1120 250" stroke="#61E6D8" strokeWidth="3" fill="none" markerEnd="url(#arrGreen)" />
+
+                        {/* BUG RETURN LOOP */}
+                        <path
+                            d="M 1000 290 Q 1000 420 610 420 Q 220 420 220 300"
+                            stroke="url(#redGrad)"
+                            strokeWidth="2"
+                            strokeDasharray="6 6"
+                            fill="none"
+                            markerEnd="url(#arrRed)"
+                            style={{ animation: "dashFlow 2s linear infinite" }}
+                        />
+
+                        {/* LABELS */}
+                        {/* SUPPORT NEEDED LABELS */}
+
+                        <text
+                            x="450"
+                            y="55"
+                            fill="#8EA4FF"
+                            fontSize="9"
+                            fontFamily="monospace"
+                            opacity="0.8"
+                        >
+                            SUPPORT NEEDED
+                        </text>
+
+                        <text
+                            x="755"
+                            y="55"
+                            fill="#61E6D8"
+                            fontSize="9"
+                            fontFamily="monospace"
+                            opacity="0.8"
+                        >
+                            SUPPORT NEEDED
+                        </text>
+                        <text x="1000" y="235" fill="#61E6D8" fontSize="9" fontFamily="monospace" textAnchor="middle">TESTED</text>
+                        <text x="1080" y="235" fill="#61E6D8" fontSize="9" fontFamily="monospace" textAnchor="middle">NO BUGS</text>
+                        <text x="610" y="410" fill="#FF8FA3" fontSize="10" fontFamily="monospace" fontWeight="700" textAnchor="middle">BUG FOUND</text>
+
+                        {/* --- HTML NODES VIA FOREIGN OBJECT --- */}
+                        <foreignObject x="0" y="0" width="1300" height="460" style={{ pointerEvents: "none" }}>
+                            <div style={{ position: "relative", width: "100%", height: "100%" }}>
+
+                                {/* TICKET ARRIVES */}
+                                <div style={{ position: "absolute", left: "70px", top: "250px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ width: "70px", height: "70px", borderRadius: "16px", background: "#0B1528", border: "1px solid rgba(142,164,255,0.4)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: "0 8px 24px rgba(0,0,0,0.4)" }}>
+                                        <span style={{ fontSize: "16px", color: "#8EA4FF" }}>✦</span>
+                                        <span style={{ fontSize: "9px", fontWeight: 700, color: "#fff", marginTop: "4px" }}>TICKET</span>
+                                    </div>
+                                </div>
+
+                                {/* DEV BUILD */}
+                                <div style={{ position: "absolute", left: "235px", top: "250px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ width: "80px", height: "80px", borderRadius: "50%", background: "#0D1B32", border: "2px solid #8EA4FF", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: "0 0 25px rgba(142,164,255,0.25)" }}>
+                                        <span style={{ fontSize: "14px", color: "#8EA4FF", fontWeight: 800 }}>&lt;/&gt;</span>
+                                        <span style={{ fontSize: "9px", fontWeight: 700, color: "#8EA4FF", marginTop: "2px" }}>BUILD</span>
+                                    </div>
+                                </div>
+
+                                {/* BACKEND */}
+                                <div style={{ position: "absolute", left: "330px", top: "150px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ padding: "8px 16px", borderRadius: "20px", background: "#0B1528", border: "1px solid rgba(142,164,255,0.5)", color: "#fff", fontSize: "10px", fontWeight: 600, display: "flex", gap: "6px", alignItems: "center" }}>
+                                        <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#8EA4FF" }} /> BACKEND
+                                    </div>
+                                </div>
+
+                                {/* FRONTEND */}
+                                <div style={{ position: "absolute", left: "330px", top: "350px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ padding: "8px 16px", borderRadius: "20px", background: "#0B1528", border: "1px solid rgba(142,164,255,0.5)", color: "#fff", fontSize: "10px", fontWeight: 600, display: "flex", gap: "6px", alignItems: "center" }}>
+                                        <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#61E6D8" }} /> FRONTEND
+                                    </div>
+                                </div>
+
+                                {/* SYNC */}
+                                <div style={{ position: "absolute", left: "510px", top: "250px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ width: "60px", height: "60px", borderRadius: "50%", background: "#071826", border: "2px solid #61E6D8", display: "flex", alignItems: "center", justifyContent: "center", color: "#61E6D8", fontSize: "16px", fontWeight: "bold", animation: "pulseGlow 3s infinite" }}>
+                                        ⚡
+                                    </div>
+                                    <span style={{ position: "absolute", bottom: "-18px", left: "50%", transform: "translateX(-50%)", fontSize: "9px", color: "#61E6D8", fontFamily: "monospace" }}>SYNC</span>
+                                </div>
+
+                                {/* MENTORS */}
+                                <div style={{ position: "absolute", left: "670px", top: "120px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ padding: "10px 20px", borderRadius: "12px", background: "rgba(255,255,255,0.05)", backdropFilter: "blur(8px)", border: "1px dashed rgba(255,255,255,0.3)", color: "#fff", fontSize: "11px", fontWeight: 700, letterSpacing: "1px" }}>
+                                        ⌘ MENTORS
+                                    </div>
+                                </div>
+
+                                {/* QA VERIFICATION */}
+                                <div style={{ position: "absolute", left: "670px", top: "250px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ width: "75px", height: "75px", borderRadius: "50%", background: "#071826", border: "1px solid #61E6D8", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+                                        <span style={{ fontSize: "10px", fontWeight: 700, color: "#61E6D8" }}>QA VERIFY</span>
+                                    </div>
+                                </div>
+
+                                {/* QA IN PROGRESS */}
+                                <div style={{ position: "absolute", left: "830px", top: "250px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ width: "75px", height: "75px", borderRadius: "50%", background: "#071826", border: "1px solid #61E6D8", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+                                        <span style={{ fontSize: "10px", fontWeight: 700, color: "#fff" }}>TESTING</span>
+                                    </div>
+                                </div>
+
+                                {/* BUG CHECK */}
+                                <div style={{ position: "absolute", left: "1000px", top: "250px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ width: "75px", height: "75px", borderRadius: "50%", background: "#1C0D18", border: "2px solid #FF8FA3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", animation: "alertPulse 2s infinite" }}>
+                                        <span style={{ fontSize: "11px", fontWeight: 800, color: "#FF8FA3" }}>BUG?</span>
+                                    </div>
+                                </div>
+
+                                {/* CLOSED / DONE */}
+                                <div style={{ position: "absolute", left: "1160px", top: "250px", transform: "translate(-50%, -50%)" }}>
+                                    <div style={{ width: "85px", height: "85px", borderRadius: "50%", background: "linear-gradient(135deg, #071826, #0D2D3A)", border: "2px solid #61E6D8", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: "0 0 30px rgba(97,230,216,0.3)" }}>
+                                        <span style={{ fontSize: "18px", color: "#61E6D8" }}>✓</span>
+                                        <span style={{ fontSize: "10px", fontWeight: 800, color: "#fff", letterSpacing: "1px" }}>DONE</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </foreignObject>
+                    </svg>
+                </div>
+            </div>
+        </SlideRoot>
+    );
+};
+
+window.QRCodeSlide = () => {
 
     return (
         <SlideRoot>
@@ -3332,153 +3692,94 @@ window.FromVisionToWorkSlide = () => {
                 style={{
                     width: "100%",
                     height: "100%",
+                    background: "#050B16",
                     position: "relative",
                     overflow: "hidden",
-                    background: "#050B16",
-                    color: "white"
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
                 }}
             >
 
                 <style>
                     {`
 
-                    @keyframes fadeUp {
-                        from {
-                            opacity: 0;
-                            transform: translateY(25px);
+                    @keyframes floatPhone {
+                        0%, 100% {
+                            transform: translateY(0px) rotate(3deg);
                         }
-
-                        to {
-                            opacity: 1;
-                            transform: translateY(0);
+                        50% {
+                            transform: translateY(-14px) rotate(3deg);
                         }
                     }
 
-                    @keyframes floatParticle {
-                        0% {
-                            transform: translateY(0);
-                            opacity: 0;
+                    @keyframes floatDesktop {
+                        0%, 100% {
+                            transform: translateY(0px);
                         }
-
-                        15% {
-                            opacity: .7;
-                        }
-
-                        80% {
-                            opacity: .25;
-                        }
-
-                        100% {
-                            transform: translateY(-100vh);
-                            opacity: 0;
+                        50% {
+                            transform: translateY(-7px);
                         }
                     }
 
-                    @keyframes flowForward {
-                        0% {
-                            offset-distance: 0%;
-                            opacity: 0;
+                    @keyframes glowPulse {
+                        0%, 100% {
+                            opacity: 0.25;
+                            transform: scale(0.95);
                         }
-
-                        8% {
-                            opacity: 1;
-                        }
-
-                        88% {
-                            opacity: 1;
-                        }
-
-                        100% {
-                            offset-distance: 100%;
-                            opacity: 0;
+                        50% {
+                            opacity: 0.55;
+                            transform: scale(1.05);
                         }
                     }
 
-                    @keyframes flowReverse {
+                    @keyframes scanLine {
                         0% {
-                            offset-distance: 0%;
+                            top: 0%;
                             opacity: 0;
                         }
-
                         10% {
                             opacity: 1;
                         }
-
-                        85% {
+                        90% {
                             opacity: 1;
                         }
-
                         100% {
-                            offset-distance: 100%;
+                            top: 100%;
                             opacity: 0;
-                        }
-                    }
-
-                    @keyframes nodeGlow {
-                        0%,100% {
-                            box-shadow:
-                                0 0 0 rgba(97,230,216,0),
-                                0 0 25px rgba(97,230,216,.08);
-                        }
-
-                        50% {
-                            box-shadow:
-                                0 0 0 8px rgba(97,230,216,.02),
-                                0 0 55px rgba(97,230,216,.35);
-                        }
-                    }
-
-                    @keyframes blueGlow {
-                        0%,100% {
-                            box-shadow:
-                                0 0 20px rgba(142,164,255,.08);
-                        }
-
-                        50% {
-                            box-shadow:
-                                0 0 50px rgba(142,164,255,.3);
-                        }
-                    }
-
-                    @keyframes doneGlow {
-                        0%,100% {
-                            box-shadow:
-                                0 0 25px rgba(97,230,216,.15);
-                        }
-
-                        50% {
-                            box-shadow:
-                                0 0 70px rgba(97,230,216,.5);
-                        }
-                    }
-
-                    @keyframes bugGlow {
-                        0%,100% {
-                            box-shadow:
-                                0 0 15px rgba(255,143,163,.08);
-                        }
-
-                        50% {
-                            box-shadow:
-                                0 0 35px rgba(255,143,163,.35);
-                        }
-                    }
-
-                    @keyframes dashMove {
-                        to {
-                            stroke-dashoffset: -36;
                         }
                     }
 
                     @keyframes pulseDot {
-                        0%,100% {
-                            transform: scale(1);
-                            opacity: .65;
+                        0%, 100% {
+                            opacity: 0.3;
+                            transform: scale(0.8);
                         }
-
                         50% {
-                            transform: scale(1.5);
                             opacity: 1;
+                            transform: scale(1.2);
+                        }
+                    }
+
+                    @keyframes arrowPulse {
+                        0%, 100% {
+                            transform: translateX(0);
+                            opacity: 0.5;
+                        }
+                        50% {
+                            transform: translateX(6px);
+                            opacity: 1;
+                        }
+                    }
+
+                    @keyframes reveal {
+                        from {
+                            opacity: 0;
+                            transform: translateY(20px);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
                         }
                     }
 
@@ -3487,1580 +3788,705 @@ window.FromVisionToWorkSlide = () => {
 
 
                 {/* ================================================= */}
-                {/* BACKGROUND GLOWS                                  */}
-                {/* ================================================= */}
-
-                <div
-                    style={{
-                        position: "absolute",
-                        width: "850px",
-                        height: "850px",
-                        borderRadius: "50%",
-                        background:
-                            "radial-gradient(circle, rgba(142,164,255,.13), transparent 68%)",
-                        filter: "blur(90px)",
-                        top: "-450px",
-                        left: "-250px"
-                    }}
-                />
-
-                <div
-                    style={{
-                        position: "absolute",
-                        width: "750px",
-                        height: "750px",
-                        borderRadius: "50%",
-                        background:
-                            "radial-gradient(circle, rgba(97,230,216,.10), transparent 68%)",
-                        filter: "blur(90px)",
-                        bottom: "-420px",
-                        right: "-250px"
-                    }}
-                />
-
-
-                {/* ================================================= */}
-                {/* BACKGROUND PARTICLES                              */}
+                {/* BACKGROUND GRID */}
                 {/* ================================================= */}
 
                 <div
                     style={{
                         position: "absolute",
                         inset: 0,
-                        pointerEvents: "none",
-                        overflow: "hidden"
+
+                        backgroundImage:
+                            "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
+
+                        backgroundSize: "45px 45px",
+
+                        maskImage:
+                            "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
+
+                        WebkitMaskImage:
+                            "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* MAIN GLOW */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "700px",
+                        height: "700px",
+
+                        borderRadius: "50%",
+
+                        background:
+                            "radial-gradient(circle, rgba(97,230,216,0.10), transparent 68%)",
+
+                        right: "4%",
+                        top: "50%",
+
+                        transform: "translateY(-50%)",
+
+                        filter: "blur(50px)",
+
+                        animation:
+                            "glowPulse 6s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "500px",
+                        height: "500px",
+
+                        borderRadius: "50%",
+
+                        background:
+                            "radial-gradient(circle, rgba(142,164,255,0.09), transparent 68%)",
+
+                        left: "-200px",
+                        bottom: "-200px",
+
+                        filter: "blur(50px)",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* TOP LABEL */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        top: "7%",
+                        left: "7%",
+
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "12px",
+
+                        fontSize: "10px",
+                        fontWeight: 600,
+
+                        letterSpacing: "0.28em",
+
+                        color: "#61E6D8",
+
+                        textTransform: "uppercase"
                     }}
                 >
 
-                    {Array.from({ length: 32 }).map((_, i) => (
+                    <div
+                        style={{
+                            width: "7px",
+                            height: "7px",
 
-                        <div
-                            key={i}
-                            style={{
-                                position: "absolute",
+                            borderRadius: "50%",
 
-                                left:
-                                    `${(i * 37) % 100}%`,
+                            background: "#61E6D8",
 
-                                bottom: "-10px",
+                            boxShadow:
+                                "0 0 15px rgba(97,230,216,0.9)",
 
-                                width:
-                                    `${2 + (i % 3)}px`,
+                            animation:
+                                "pulseDot 2s ease-in-out infinite"
+                        }}
+                    />
 
-                                height:
-                                    `${2 + (i % 3)}px`,
-
-                                borderRadius: "50%",
-
-                                background:
-                                    i % 2
-                                        ? "#8EA4FF"
-                                        : "#61E6D8",
-
-                                boxShadow:
-                                    "0 0 14px currentColor",
-
-                                animation:
-                                    `floatParticle ${7 + i % 6}s linear infinite`,
-
-                                animationDelay:
-                                    `${-(i % 8)}s`
-                            }}
-                        />
-
-                    ))}
+                    Internship Presentation · 2026
 
                 </div>
 
 
                 {/* ================================================= */}
-                {/* MAIN CONTAINER                                    */}
+                {/* MAIN CONTENT */}
                 {/* ================================================= */}
 
                 <div
                     style={{
-                        width: "91%",
-                        maxWidth: "1380px",
-                        height: "100%",
-                        margin: "0 auto",
+                        width: "86%",
+                        maxWidth: "1350px",
+
+                        display: "grid",
+                        gridTemplateColumns: "0.9fr 1.1fr",
+
+                        alignItems: "center",
+
+                        gap: "70px",
+
                         position: "relative",
-                        zIndex: 5,
-                        paddingTop: "58px"
+                        zIndex: 5
                     }}
                 >
 
 
                     {/* ================================================= */}
-                    {/* HEADER                                            */}
+                    {/* LEFT SIDE */}
                     {/* ================================================= */}
 
                     <div
                         style={{
-                            textAlign: "center",
-                            animation: "fadeUp .7s ease-out"
+                            animation:
+                                "reveal 0.8s ease forwards"
                         }}
                     >
 
                         <div
                             style={{
-                                display: "inline-flex",
-                                alignItems: "center",
-                                gap: "12px",
-                                marginBottom: "15px"
+                                fontSize: "12px",
+                                fontWeight: 600,
+
+                                letterSpacing: "0.30em",
+
+                                color:
+                                    "rgba(255,255,255,0.38)",
+
+                                textTransform: "uppercase",
+
+                                marginBottom: "22px"
                             }}
                         >
-
-                            <div
-                                style={{
-                                    width: "38px",
-                                    height: "2px",
-                                    background:
-                                        "linear-gradient(90deg,#8EA4FF,#61E6D8)"
-                                }}
-                            />
-
-                            <span
-                                style={{
-                                    color: "#61E6D8",
-                                    fontSize: "9px",
-                                    fontWeight: 700,
-                                    letterSpacing: ".34em"
-                                }}
-                            >
-                                THE LIFE OF A TICKET
-                            </span>
-
-                            <div
-                                style={{
-                                    width: "38px",
-                                    height: "2px",
-                                    background:
-                                        "linear-gradient(90deg,#61E6D8,#8EA4FF)"
-                                }}
-                            />
-
+                            Before we begin
                         </div>
 
 
                         <h1
-                            className="display"
                             style={{
                                 margin: 0,
-                                fontSize: "clamp(52px,6vw,80px)",
-                                lineHeight: ".88",
-                                letterSpacing: "-.065em"
+
+                                fontSize:
+                                    "clamp(54px, 6vw, 88px)",
+
+                                lineHeight: "0.92",
+
+                                letterSpacing: "-0.065em",
+
+                                fontWeight: 700
                             }}
                         >
 
-                            From ticket
-
+                            See it.
                             <br />
 
                             <span
                                 style={{
                                     background:
-                                        "linear-gradient(90deg,#fff,#8EA4FF,#61E6D8)",
+                                        "linear-gradient(90deg,#ffffff,#8EA4FF,#61E6D8)",
+
                                     WebkitBackgroundClip: "text",
+
                                     WebkitTextFillColor: "transparent"
                                 }}
                             >
-                                to done.
+                                Scan it.
                             </span>
+
+                            <br />
+
+                            Explore it.
 
                         </h1>
 
 
                         <p
                             style={{
-                                marginTop: "16px",
-                                color: "rgba(255,255,255,.38)",
-                                fontSize: "14px"
+                                marginTop: "28px",
+
+                                fontSize: "17px",
+
+                                lineHeight: "1.6",
+
+                                color:
+                                    "rgba(255,255,255,0.50)",
+
+                                maxWidth: "440px"
                             }}
                         >
-                            One ticket. Multiple hands. One final decision.
+                            While we get ready to start,
+                            take a quick look at the project
+                            on your phone.
                         </p>
+
+
+                        {/* SCAN CTA */}
+
+                        <div
+                            style={{
+                                marginTop: "34px",
+
+                                display: "flex",
+                                alignItems: "center",
+
+                                gap: "14px"
+                            }}
+                        >
+
+                            <div
+                                style={{
+                                    width: "36px",
+                                    height: "36px",
+
+                                    borderRadius: "50%",
+
+                                    border:
+                                        "1px solid rgba(97,230,216,0.45)",
+
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+
+                                    color: "#61E6D8",
+
+                                    animation:
+                                        "arrowPulse 2s ease-in-out infinite"
+                                }}
+                            >
+                                →
+                            </div>
+
+
+                            <div>
+
+                                <div
+                                    style={{
+                                        fontSize: "11px",
+
+                                        fontWeight: 600,
+
+                                        letterSpacing:
+                                            "0.18em",
+
+                                        color:
+                                            "rgba(255,255,255,0.72)",
+
+                                        textTransform: "uppercase"
+                                    }}
+                                >
+                                    Scan the QR
+                                </div>
+
+                                <div
+                                    style={{
+                                        marginTop: "5px",
+
+                                        fontSize: "10px",
+
+                                        color:
+                                            "rgba(255,255,255,0.30)"
+                                    }}
+                                >
+                                    No app needed
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
 
                     {/* ================================================= */}
-                    {/* GRAPH AREA                                       */}
+                    {/* RIGHT SIDE — PRODUCT PREVIEW */}
                     {/* ================================================= */}
 
                     <div
                         style={{
                             position: "relative",
-                            height: "440px",
-                            marginTop: "36px"
+
+                            height: "500px",
+
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
                         }}
                     >
 
 
-                        {/* ================================================= */}
-                        {/* DEVELOPMENT SECTION                              */}
-                        {/* ================================================= */}
+                        {/* DESKTOP PREVIEW */}
 
                         <div
                             style={{
                                 position: "absolute",
-                                left: "17%",
-                                top: "4px",
-                                color: "rgba(142,164,255,.45)",
-                                fontSize: "8px",
-                                letterSpacing: ".28em",
-                                fontWeight: 700
-                            }}
-                        >
-                            DEVELOPMENT
-                        </div>
 
+                                width: "clamp(400px, 42vw, 610px)",
 
-                        {/* ================================================= */}
-                        {/* QUALITY SECTION                                   */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-                                left: "63%",
-                                top: "4px",
-                                color: "rgba(97,230,216,.45)",
-                                fontSize: "8px",
-                                letterSpacing: ".28em",
-                                fontWeight: 700
-                            }}
-                        >
-                            QUALITY
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* SVG FLOW                                          */}
-                        {/* ================================================= */}
-
-                        <svg
-                            viewBox="0 0 1000 440"
-                            preserveAspectRatio="none"
-                            style={{
-                                position: "absolute",
-                                inset: 0,
-                                width: "100%",
-                                height: "100%",
-                                overflow: "visible",
-                                pointerEvents: "none"
-                            }}
-                        >
-
-                            <defs>
-
-                                <linearGradient
-                                    id="mainFlowGradient"
-                                    x1="0%"
-                                    y1="0%"
-                                    x2="100%"
-                                    y2="0%"
-                                >
-
-                                    <stop
-                                        offset="0%"
-                                        stopColor="#8EA4FF"
-                                        stopOpacity=".25"
-                                    />
-
-                                    <stop
-                                        offset="30%"
-                                        stopColor="#8EA4FF"
-                                        stopOpacity=".8"
-                                    />
-
-                                    <stop
-                                        offset="52%"
-                                        stopColor="#61E6D8"
-                                        stopOpacity=".95"
-                                    />
-
-                                    <stop
-                                        offset="100%"
-                                        stopColor="#61E6D8"
-                                        stopOpacity=".45"
-                                    />
-
-                                </linearGradient>
-
-
-                                <linearGradient
-                                    id="branchGradient"
-                                    x1="0%"
-                                    y1="0%"
-                                    x2="100%"
-                                    y2="100%"
-                                >
-
-                                    <stop
-                                        offset="0%"
-                                        stopColor="#8EA4FF"
-                                        stopOpacity=".8"
-                                    />
-
-                                    <stop
-                                        offset="100%"
-                                        stopColor="#61E6D8"
-                                        stopOpacity=".6"
-                                    />
-
-                                </linearGradient>
-
-
-                                <linearGradient
-                                    id="bugGradient"
-                                    x1="0%"
-                                    y1="0%"
-                                    x2="100%"
-                                    y2="0%"
-                                >
-
-                                    <stop
-                                        offset="0%"
-                                        stopColor="#FF8FA3"
-                                        stopOpacity=".95"
-                                    />
-
-                                    <stop
-                                        offset="100%"
-                                        stopColor="#8EA4FF"
-                                        stopOpacity=".55"
-                                    />
-
-                                </linearGradient>
-
-                            </defs>
-
-
-                            {/* ============================================= */}
-                            {/* TICKET → DEVELOPMENT                         */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M70 220
-                                    C140 220
-                                    220 220
-                                    290 220
-                                "
-                                fill="none"
-                                stroke="url(#mainFlowGradient)"
-                                strokeWidth="3"
-                                strokeLinecap="round"
-                                opacity=".8"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* DEVELOPMENT → SYNC                           */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M290 220
-                                    C355 220
-                                    430 220
-                                    500 220
-                                "
-                                fill="none"
-                                stroke="url(#mainFlowGradient)"
-                                strokeWidth="3"
-                                strokeLinecap="round"
-                                opacity=".8"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* SYNC → QA                                     */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M500 220
-                                    C565 220
-                                    645 220
-                                    710 220
-                                "
-                                fill="none"
-                                stroke="#61E6D8"
-                                strokeWidth="3"
-                                strokeLinecap="round"
-                                opacity=".8"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* QA → DONE                                     */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M710 220
-                                    C780 220
-                                    860 220
-                                    930 220
-                                "
-                                fill="none"
-                                stroke="#61E6D8"
-                                strokeWidth="4"
-                                strokeLinecap="round"
-                                opacity=".85"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* DEVELOPMENT → BACKEND                        */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M290 220
-                                    C255 185
-                                    235 135
-                                    210 95
-                                "
-                                fill="none"
-                                stroke="url(#branchGradient)"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                opacity=".6"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* DEVELOPMENT → FRONTEND                       */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M290 220
-                                    C255 255
-                                    235 305
-                                    210 345
-                                "
-                                fill="none"
-                                stroke="url(#branchGradient)"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                opacity=".6"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* BACKEND → SYNC                               */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M210 95
-                                    C315 88
-                                    420 110
-                                    500 220
-                                "
-                                fill="none"
-                                stroke="#8EA4FF"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                opacity=".35"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* FRONTEND → SYNC                              */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M210 345
-                                    C315 352
-                                    420 330
-                                    500 220
-                                "
-                                fill="none"
-                                stroke="#8EA4FF"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                                opacity=".35"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* DEVELOPMENT NODE                             */}
-                            {/* ============================================= */}
-
-                            <circle
-                                cx="290"
-                                cy="220"
-                                r="5"
-                                fill="#8EA4FF"
-                                opacity=".9"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* SYNC NODE                                     */}
-                            {/* ============================================= */}
-
-                            <circle
-                                cx="500"
-                                cy="220"
-                                r="5"
-                                fill="#61E6D8"
-                                opacity=".9"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* QA NODE                                       */}
-                            {/* ============================================= */}
-
-                            <circle
-                                cx="710"
-                                cy="220"
-                                r="5"
-                                fill="#61E6D8"
-                                opacity=".9"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* DONE NODE                                     */}
-                            {/* ============================================= */}
-
-                            <circle
-                                cx="930"
-                                cy="220"
-                                r="5"
-                                fill="#61E6D8"
-                                opacity=".95"
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* BUG RETURN LOOP                               */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M710 220
-                                    C765 275
-                                    760 350
-                                    650 380
-                                    C520 410
-                                    370 385
-                                    290 275
-                                "
-                                fill="none"
-                                stroke="url(#bugGradient)"
-                                strokeWidth="2.5"
-                                strokeLinecap="round"
-                                strokeDasharray="8 10"
-                                opacity=".75"
-                                style={{
-                                    animation:
-                                        "dashMove 2.5s linear infinite"
-                                }}
-                            />
-
-
-                            {/* ============================================= */}
-                            {/* BUG RETURN ARROW                              */}
-                            {/* ============================================= */}
-
-                            <path
-                                d="
-                                    M290 275
-                                    L307 268
-                                    M290 275
-                                    L302 286
-                                "
-                                fill="none"
-                                stroke="#FF8FA3"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                opacity=".9"
-                            />
-
-                        </svg>
-
-
-                        {/* ================================================= */}
-                        {/* MAIN MOVING PARTICLE                             */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                width: "10px",
-                                height: "10px",
-
-                                borderRadius: "50%",
-
-                                background: "#61E6D8",
-
-                                boxShadow:
-                                    "0 0 10px #61E6D8, 0 0 30px #61E6D8, 0 0 55px rgba(97,230,216,.5)",
-
-                                offsetPath: `
-                                    path("M70 220
-                                          C140 220 220 220 290 220
-                                          C355 220 430 220 500 220
-                                          C565 220 645 220 710 220
-                                          C780 220 860 220 930 220")
-                                `,
-
-                                offsetDistance: "0%",
-
-                                animation:
-                                    "flowForward 11s linear infinite",
-
-                                zIndex: 30,
-
-                                transform:
-                                    "translate(-50%, -50%)"
-                            }}
-                        />
-
-
-                        {/* ================================================= */}
-                        {/* SECOND PARTICLE                                  */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                width: "5px",
-                                height: "5px",
-
-                                borderRadius: "50%",
-
-                                background: "#8EA4FF",
-
-                                boxShadow:
-                                    "0 0 18px #8EA4FF",
-
-                                offsetPath: `
-                                    path("M70 220
-                                          C140 220 220 220 290 220
-                                          C355 220 430 220 500 220
-                                          C565 220 645 220 710 220
-                                          C780 220 860 220 930 220")
-                                `,
-
-                                offsetDistance: "0%",
-
-                                animation:
-                                    "flowForward 11s linear infinite",
-
-                                animationDelay:
-                                    "-3.7s",
-
-                                zIndex: 28
-                            }}
-                        />
-
-
-                        {/* ================================================= */}
-                        {/* THIRD PARTICLE                                   */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                width: "4px",
-                                height: "4px",
-
-                                borderRadius: "50%",
-
-                                background: "#61E6D8",
-
-                                boxShadow:
-                                    "0 0 16px #61E6D8",
-
-                                offsetPath: `
-                                    path("M70 220
-                                          C140 220 220 220 290 220
-                                          C355 220 430 220 500 220
-                                          C565 220 645 220 710 220
-                                          C780 220 860 220 930 220")
-                                `,
-
-                                offsetDistance: "0%",
-
-                                animation:
-                                    "flowForward 11s linear infinite",
-
-                                animationDelay:
-                                    "-7.2s",
-
-                                zIndex: 27
-                            }}
-                        />
-
-
-                        {/* ================================================= */}
-                        {/* TICKET                                           */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-                                left: "7%",
-                                top: "calc(50% - 31px)",
-                                transform: "translateX(-50%)",
-                                textAlign: "center",
-                                zIndex: 10
-                            }}
-                        >
-
-                            <div
-                                style={{
-                                    width: "62px",
-                                    height: "62px",
-                                    borderRadius: "50%",
-
-                                    background: "#050B16",
-
-                                    border:
-                                        "1px solid rgba(142,164,255,.65)",
-
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-
-                                    color: "#8EA4FF",
-
-                                    fontSize: "22px",
-
-                                    boxShadow:
-                                        "0 0 35px rgba(142,164,255,.15)"
-                                }}
-                            >
-                                ✦
-                            </div>
-
-
-                            <div
-                                style={{
-                                    marginTop: "13px",
-                                    color: "#8EA4FF",
-                                    fontSize: "10px",
-                                    fontWeight: 700,
-                                    letterSpacing: ".18em"
-                                }}
-                            >
-                                TICKET
-                            </div>
-
-
-                            <div
-                                style={{
-                                    marginTop: "5px",
-                                    color: "rgba(255,255,255,.27)",
-                                    fontSize: "8px",
-                                    letterSpacing: ".14em"
-                                }}
-                            >
-                                ARRIVES
-                            </div>
-
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* DEVELOPMENT                                      */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-                                left: "29%",
-                                top: "calc(50% - 31px)",
-                                transform: "translateX(-50%)",
-                                textAlign: "center",
-                                zIndex: 10
-                            }}
-                        >
-
-                            <div
-                                style={{
-                                    width: "72px",
-                                    height: "72px",
-                                    borderRadius: "50%",
-
-                                    background: "#050B16",
-
-                                    border:
-                                        "1px solid rgba(142,164,255,.8)",
-
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-
-                                    color: "#8EA4FF",
-
-                                    fontSize: "19px",
-                                    fontWeight: 700,
-
-                                    boxShadow:
-                                        "0 0 40px rgba(142,164,255,.18)",
-
-                                    animation:
-                                        "blueGlow 3s ease-in-out infinite"
-                                }}
-                            >
-                                &lt;/&gt;
-                            </div>
-
-
-                            <div
-                                style={{
-                                    marginTop: "13px",
-                                    color: "#8EA4FF",
-                                    fontSize: "11px",
-                                    fontWeight: 700,
-                                    letterSpacing: ".16em"
-                                }}
-                            >
-                                DEVELOPMENT
-                            </div>
-
-
-                            <div
-                                style={{
-                                    marginTop: "5px",
-                                    color: "rgba(255,255,255,.27)",
-                                    fontSize: "8px",
-                                    letterSpacing: ".14em"
-                                }}
-                            >
-                                BUILD
-                            </div>
-
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* BACKEND                                          */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                left: "21%",
-
-                                top: "calc(50% - 125px)",
-
-                                transform:
-                                    "translate(-50%, -50%)",
-
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "7px"
-                            }}
-                        >
-
-                            <span
-                                style={{
-                                    width: "7px",
-                                    height: "7px",
-                                    borderRadius: "50%",
-
-                                    background: "#8EA4FF",
-
-                                    boxShadow:
-                                        "0 0 14px #8EA4FF",
-
-                                    animation:
-                                        "pulseDot 2.5s ease-in-out infinite"
-                                }}
-                            />
-
-                            <span
-                                style={{
-                                    padding: "6px 11px",
-
-                                    borderRadius: "20px",
-
-                                    border:
-                                        "1px solid rgba(142,164,255,.2)",
-
-                                    background:
-                                        "rgba(142,164,255,.05)",
-
-                                    color:
-                                        "rgba(255,255,255,.45)",
-
-                                    fontSize: "7px",
-
-                                    fontWeight: 700,
-
-                                    letterSpacing: ".12em"
-                                }}
-                            >
-                                BACKEND
-                            </span>
-
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* FRONTEND                                         */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                left: "21%",
-
-                                top: "calc(50% + 125px)",
-
-                                transform:
-                                    "translate(-50%, -50%)",
-
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "7px"
-                            }}
-                        >
-
-                            <span
-                                style={{
-                                    width: "7px",
-                                    height: "7px",
-                                    borderRadius: "50%",
-
-                                    background: "#8EA4FF",
-
-                                    boxShadow:
-                                        "0 0 14px #8EA4FF",
-
-                                    animation:
-                                        "pulseDot 2.5s ease-in-out infinite",
-
-                                    animationDelay:
-                                        ".8s"
-                                }}
-                            />
-
-                            <span
-                                style={{
-                                    padding: "6px 11px",
-
-                                    borderRadius: "20px",
-
-                                    border:
-                                        "1px solid rgba(142,164,255,.2)",
-
-                                    background:
-                                        "rgba(142,164,255,.05)",
-
-                                    color:
-                                        "rgba(255,255,255,.45)",
-
-                                    fontSize: "7px",
-
-                                    fontWeight: 700,
-
-                                    letterSpacing: ".12em"
-                                }}
-                            >
-                                FRONTEND
-                            </span>
-
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* SYNC                                             */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                left: "50%",
-
-                                top: "50%",
-
-                                transform:
-                                    "translate(-50%, -50%)",
-
-                                textAlign: "center",
-
-                                zIndex: 10
-                            }}
-                        >
-
-                            <div
-                                style={{
-                                    width: "62px",
-                                    height: "62px",
-
-                                    borderRadius: "50%",
-
-                                    background: "#050B16",
-
-                                    border:
-                                        "1px solid rgba(97,230,216,.75)",
-
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-
-                                    color: "#61E6D8",
-
-                                    fontSize: "23px",
-
-                                    boxShadow:
-                                        "0 0 38px rgba(97,230,216,.18)",
-
-                                    animation:
-                                        "nodeGlow 2.7s ease-in-out infinite"
-                                }}
-                            >
-                                ↔
-                            </div>
-
-
-                            <div
-                                style={{
-                                    marginTop: "13px",
-
-                                    color: "#61E6D8",
-
-                                    fontSize: "10px",
-
-                                    fontWeight: 700,
-
-                                    letterSpacing: ".18em"
-                                }}
-                            >
-                                BE ↔ FE
-                            </div>
-
-
-                            <div
-                                style={{
-                                    marginTop: "5px",
-
-                                    color:
-                                        "rgba(255,255,255,.27)",
-
-                                    fontSize: "8px",
-
-                                    letterSpacing: ".1em"
-                                }}
-                            >
-                                SYNC
-                            </div>
-
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* QA                                               */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                left: "71%",
-
-                                top: "calc(50% - 31px)",
-
-                                transform:
-                                    "translateX(-50%)",
-
-                                textAlign: "center",
-
-                                zIndex: 10
-                            }}
-                        >
-
-                            <div
-                                style={{
-                                    width: "72px",
-                                    height: "72px",
-
-                                    borderRadius: "50%",
-
-                                    background: "#050B16",
-
-                                    border:
-                                        "1px solid rgba(97,230,216,.85)",
-
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-
-                                    color: "#61E6D8",
-
-                                    fontSize: "24px",
-
-                                    boxShadow:
-                                        "0 0 45px rgba(97,230,216,.2)",
-
-                                    animation:
-                                        "nodeGlow 2.5s ease-in-out infinite"
-                                }}
-                            >
-                                ◌
-                            </div>
-
-
-                            <div
-                                style={{
-                                    marginTop: "13px",
-
-                                    color: "#61E6D8",
-
-                                    fontSize: "11px",
-
-                                    fontWeight: 700,
-
-                                    letterSpacing: ".18em"
-                                }}
-                            >
-                                QA
-                            </div>
-
-
-                            <div
-                                style={{
-                                    marginTop: "5px",
-
-                                    color:
-                                        "rgba(255,255,255,.27)",
-
-                                    fontSize: "8px",
-
-                                    letterSpacing: ".12em"
-                                }}
-                            >
-                                VERIFICATION
-                            </div>
-
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* QA TAKES OVER                                    */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                left: "71%",
-
-                                top: "calc(50% + 75px)",
-
-                                transform:
-                                    "translateX(-50%)",
-
-                                padding:
-                                    "7px 16px",
-
-                                borderRadius:
-                                    "20px",
+                                height: "clamp(270px, 28vw, 390px)",
 
                                 background:
-                                    "rgba(97,230,216,.045)",
+                                    "#101827",
 
                                 border:
-                                    "1px solid rgba(97,230,216,.16)",
+                                    "1px solid rgba(255,255,255,0.12)",
 
-                                color:
-                                    "#61E6D8",
+                                borderRadius: "16px",
 
-                                fontSize: "7px",
+                                boxShadow:
+                                    "0 30px 100px rgba(0,0,0,0.55), 0 0 60px rgba(142,164,255,0.08)",
 
-                                fontWeight: 700,
+                                overflow: "hidden",
 
-                                letterSpacing: ".15em"
-                            }}
-                        >
-                            QA TAKES OVER
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* BUG FOUND                                        */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                left: "63%",
-
-                                bottom: "34px",
-
-                                transform:
-                                    "translateX(-50%)",
-
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "8px",
-
-                                padding:
-                                    "8px 16px",
-
-                                borderRadius: "22px",
-
-                                background:
-                                    "rgba(255,143,163,.05)",
-
-                                border:
-                                    "1px solid rgba(255,143,163,.24)",
-
-                                color:
-                                    "#FF8FA3",
-
-                                fontSize: "8px",
-
-                                fontWeight: 700,
-
-                                letterSpacing: ".14em",
+                                left: "5%",
+                                top: "8%",
 
                                 animation:
-                                    "bugGlow 2.5s ease-in-out infinite"
+                                    "floatDesktop 6s ease-in-out infinite"
                             }}
                         >
 
-                            <span
-                                style={{
-                                    width: "6px",
-                                    height: "6px",
-
-                                    borderRadius: "50%",
-
-                                    background:
-                                        "#FF8FA3",
-
-                                    boxShadow:
-                                        "0 0 12px #FF8FA3"
-                                }}
-                            />
-
-                            BUG FOUND
-
-                        </div>
-
-
-                        {/* ================================================= */}
-                        {/* DONE                                             */}
-                        {/* ================================================= */}
-
-                        <div
-                            style={{
-                                position: "absolute",
-
-                                left: "93%",
-
-                                top: "calc(50% - 31px)",
-
-                                transform:
-                                    "translateX(-50%)",
-
-                                textAlign: "center",
-
-                                zIndex: 10
-                            }}
-                        >
+                            {/* BROWSER BAR */}
 
                             <div
                                 style={{
-                                    width: "78px",
-                                    height: "78px",
-
-                                    borderRadius: "50%",
+                                    height: "32px",
 
                                     background:
-                                        "rgba(97,230,216,.025)",
+                                        "#0B1220",
 
-                                    border:
-                                        "1px solid rgba(97,230,216,.9)",
+                                    borderBottom:
+                                        "1px solid rgba(255,255,255,0.07)",
 
                                     display: "flex",
                                     alignItems: "center",
-                                    justifyContent: "center",
 
-                                    color:
-                                        "#61E6D8",
+                                    padding: "0 12px",
 
-                                    fontSize: "27px",
-
-                                    animation:
-                                        "doneGlow 2.8s ease-in-out infinite"
+                                    gap: "6px"
                                 }}
                             >
-                                ✓
+
+                                <div
+                                    style={{
+                                        width: "6px",
+                                        height: "6px",
+                                        borderRadius: "50%",
+                                        background:
+                                            "rgba(255,255,255,0.25)"
+                                    }}
+                                />
+
+                                <div
+                                    style={{
+                                        width: "6px",
+                                        height: "6px",
+                                        borderRadius: "50%",
+                                        background:
+                                            "rgba(255,255,255,0.25)"
+                                    }}
+                                />
+
+                                <div
+                                    style={{
+                                        width: "6px",
+                                        height: "6px",
+                                        borderRadius: "50%",
+                                        background:
+                                            "rgba(255,255,255,0.25)"
+                                    }}
+                                />
+
+                                <div
+                                    style={{
+                                        marginLeft: "12px",
+
+                                        flex: 1,
+
+                                        height: "16px",
+
+                                        borderRadius: "5px",
+
+                                        background:
+                                            "rgba(255,255,255,0.045)"
+                                    }}
+                                />
+
                             </div>
 
 
-                            <div
+                            {/* DESKTOP IMAGE */}
+
+                            <img
+                                src="/screenshots/events.png"
+                                alt="Desktop project preview"
+
                                 style={{
-                                    marginTop: "13px",
+                                    width: "100%",
+                                    height: "calc(100% - 32px)",
 
-                                    color:
-                                        "#61E6D8",
+                                    objectFit: "cover",
 
-                                    fontSize: "12px",
+                                    objectPosition: "top",
 
-                                    fontWeight: 700,
-
-                                    letterSpacing: ".2em"
+                                    display: "block"
                                 }}
-                            >
-                                DONE
-                            </div>
-
-
-                            <div
-                                style={{
-                                    marginTop: "5px",
-
-                                    color:
-                                        "rgba(255,255,255,.3)",
-
-                                    fontSize: "8px",
-
-                                    letterSpacing: ".16em"
-                                }}
-                            >
-                                CLOSED
-                            </div>
+                            />
 
                         </div>
 
 
-                        {/* ================================================= */}
-                        {/* BUG RETURN TEXT                                  */}
-                        {/* ================================================= */}
+                        {/* MOBILE PHONE */}
 
                         <div
                             style={{
                                 position: "absolute",
 
-                                left: "50%",
+                                width: "170px",
+                                height: "350px",
 
-                                bottom: "3px",
+                                background: "#070D18",
 
-                                transform:
-                                    "translateX(-50%)",
+                                border:
+                                    "7px solid #111A2A",
 
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "12px",
+                                borderRadius: "28px",
+
+                                right: "4%",
+                                bottom: "0",
+
+                                boxShadow:
+                                    "0 30px 80px rgba(0,0,0,0.65), 0 0 45px rgba(97,230,216,0.12)",
+
+                                overflow: "hidden",
+
+                                zIndex: 10,
+
+                                animation:
+                                    "floatPhone 5s ease-in-out infinite"
+                            }}
+                        >
+
+                            {/* PHONE NOTCH */}
+
+                            <div
+                                style={{
+                                    position: "absolute",
+
+                                    top: "4px",
+                                    left: "50%",
+
+                                    transform:
+                                        "translateX(-50%)",
+
+                                    width: "65px",
+                                    height: "15px",
+
+                                    borderRadius:
+                                        "0 0 10px 10px",
+
+                                    background:
+                                        "#111A2A",
+
+                                    zIndex: 20
+                                }}
+                            />
+
+
+                            <img
+                                src="/screenshots/events-mobile.png"
+                                alt="Mobile project preview"
+
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+
+                                    objectFit: "cover",
+
+                                    objectPosition: "top",
+
+                                    display: "block"
+                                }}
+                            />
+
+                        </div>
+
+
+                        {/* MOBILE LABEL */}
+
+                        <div
+                            style={{
+                                position: "absolute",
+
+                                right: "-1%",
+                                bottom: "-38px",
+
+                                fontSize: "9px",
+
+                                letterSpacing:
+                                    "0.22em",
+
+                                color:
+                                    "rgba(255,255,255,0.32)",
+
+                                textTransform: "uppercase",
 
                                 whiteSpace: "nowrap"
                             }}
                         >
-
-                            <span
-                                style={{
-                                    color:
-                                        "rgba(255,255,255,.22)",
-
-                                    fontSize: "7px",
-
-                                    letterSpacing: ".2em"
-                                }}
-                            >
-                                IF QA FAILS
-                            </span>
-
-
-                            <span
-                                style={{
-                                    color:
-                                        "#FF8FA3",
-
-                                    fontSize: "11px"
-                                }}
-                            >
-                                ↩
-                            </span>
-
-
-                            <span
-                                style={{
-                                    color:
-                                        "rgba(255,255,255,.32)",
-
-                                    fontSize: "7px",
-
-                                    letterSpacing: ".18em"
-                                }}
-                            >
-                                BACK TO DEVELOPMENT
-                            </span>
+                            Desktop → Mobile
 
                         </div>
 
-                    </div>
 
-
-                    {/* ================================================= */}
-                    {/* BOTTOM SUMMARY                                    */}
-                    {/* ================================================= */}
-
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-
-                            marginTop: "0px",
-
-                            animation:
-                                "fadeUp .8s ease-out 1s both"
-                        }}
-                    >
+                        {/* ================================================= */}
+                        {/* QR CODE */}
+                        {/* ================================================= */}
 
                         <div
                             style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: "15px",
+                                position: "absolute",
 
-                                padding:
-                                    "12px 24px",
+                                right: "-4%",
+                                top: "-10px",
 
-                                borderRadius: "30px",
+                                width: "145px",
+                                height: "145px",
+
+                                padding: "10px",
 
                                 background:
-                                    "rgba(255,255,255,.025)",
+                                    "rgba(255,255,255,0.97)",
 
-                                border:
-                                    "1px solid rgba(255,255,255,.07)"
+                                borderRadius: "16px",
+
+                                boxShadow:
+                                    "0 20px 50px rgba(0,0,0,0.45), 0 0 35px rgba(97,230,216,0.12)",
+
+                                zIndex: 15,
+
+                                overflow: "hidden"
                             }}
                         >
 
-                            <span
+                            <img
+                                src="/screenshots/Friday QR Code 3.jpeg"
+                                alt="QR Code"
+
                                 style={{
-                                    color:
-                                        "rgba(255,255,255,.25)",
+                                    width: "100%",
+                                    height: "100%",
 
-                                    fontSize: "8px",
+                                    objectFit: "contain",
 
-                                    letterSpacing: ".18em"
+                                    display: "block"
                                 }}
-                            >
-                                THE PROCESS
-                            </span>
+                            />
 
+                            {/* SCAN LINE */}
 
-                            <span
+                            <div
                                 style={{
-                                    color:
-                                        "#8EA4FF",
+                                    position: "absolute",
 
-                                    fontSize: "9px",
+                                    left: "8px",
+                                    right: "8px",
 
-                                    fontWeight: 700,
+                                    height: "2px",
 
-                                    letterSpacing: ".1em"
+                                    background:
+                                        "linear-gradient(90deg, transparent, #61E6D8, transparent)",
+
+                                    boxShadow:
+                                        "0 0 12px rgba(97,230,216,0.9)",
+
+                                    animation:
+                                        "scanLine 2.8s ease-in-out infinite",
+
+                                    pointerEvents: "none"
                                 }}
-                            >
-                                DEVELOPMENT
-                            </span>
+                            />
+
+                        </div>
 
 
-                            <span
-                                style={{
-                                    color:
-                                        "rgba(255,255,255,.25)"
-                                }}
-                            >
-                                →
-                            </span>
+                        {/* QR SMALL TEXT */}
 
+                        <div
+                            style={{
+                                position: "absolute",
 
-                            <span
-                                style={{
-                                    color:
-                                        "#61E6D8",
+                                right: "0%",
+                                top: "150px",
 
-                                    fontSize: "9px",
+                                fontSize: "8px",
 
-                                    fontWeight: 700,
+                                letterSpacing:
+                                    "0.16em",
 
-                                    letterSpacing: ".1em"
-                                }}
-                            >
-                                BE ↔ FE
-                            </span>
+                                color:
+                                    "rgba(255,255,255,0.30)",
 
+                                textTransform: "uppercase",
 
-                            <span
-                                style={{
-                                    color:
-                                        "rgba(255,255,255,.25)"
-                                }}
-                            >
-                                →
-                            </span>
-
-
-                            <span
-                                style={{
-                                    color:
-                                        "#61E6D8",
-
-                                    fontSize: "9px",
-
-                                    fontWeight: 700,
-
-                                    letterSpacing: ".1em"
-                                }}
-                            >
-                                QA
-                            </span>
-
-
-                            <span
-                                style={{
-                                    color:
-                                        "rgba(255,255,255,.25)"
-                                }}
-                            >
-                                →
-                            </span>
-
-
-                            <span
-                                style={{
-                                    color:
-                                        "#61E6D8",
-
-                                    fontSize: "9px",
-
-                                    fontWeight: 700,
-
-                                    letterSpacing: ".1em"
-                                }}
-                            >
-                                DONE
-                            </span>
-
+                                textAlign: "center"
+                            }}
+                        >
+                            Scan to explore
                         </div>
 
                     </div>
 
                 </div>
+
+
+                {/* ================================================= */}
+                {/* BOTTOM DETAILS */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        bottom: "6%",
+                        left: "7%",
+
+                        fontFamily: "monospace",
+
+                        fontSize: "8px",
+
+                        letterSpacing: "0.20em",
+
+                        color:
+                            "rgba(255,255,255,0.18)"
+                    }}
+                >
+                    VASS · AEM EVENT MANAGEMENT
+                </div>
+
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        bottom: "6%",
+                        right: "7%",
+
+                        fontFamily: "monospace",
+
+                        fontSize: "8px",
+
+                        letterSpacing: "0.20em",
+
+                        color:
+                            "rgba(255,255,255,0.18)"
+                    }}
+                >
+                    WE'LL BEGIN IN A MOMENT
+                </div>
+
 
             </div>
 
@@ -5068,6 +4494,1072 @@ window.FromVisionToWorkSlide = () => {
     );
 };
 
+/* ---------------- QR CODE ---------------- */
+
+window.QRCodeSlide = () => {
+
+    return (
+        <SlideRoot>
+
+            <div
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    background: "#050B16",
+                    position: "relative",
+                    overflow: "hidden",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
+                }}
+            >
+
+                <style>
+                    {`
+
+                    /* ========================================= */
+                    /* FLOATING ANIMATIONS */
+                    /* ========================================= */
+
+                    @keyframes float1 {
+                        0%, 100% {
+                            transform: translateY(0px) rotate(0deg);
+                        }
+
+                        50% {
+                            transform: translateY(-18px) rotate(2deg);
+                        }
+                    }
+
+                    @keyframes float2 {
+                        0%, 100% {
+                            transform: translateY(0px) rotate(0deg);
+                        }
+
+                        50% {
+                            transform: translateY(15px) rotate(-2deg);
+                        }
+                    }
+
+
+                    /* ========================================= */
+                    /* SQUARE FLOAT */
+                    /* ========================================= */
+
+                    @keyframes squareFloat {
+                        0%, 100% {
+                            transform: translateY(0px) rotate(18deg);
+                        }
+
+                        50% {
+                            transform: translateY(-18px) rotate(21deg);
+                        }
+                    }
+
+                    @keyframes squareFloatReverse {
+                        0%, 100% {
+                            transform: translateY(0px) rotate(-15deg);
+                        }
+
+                        50% {
+                            transform: translateY(16px) rotate(-12deg);
+                        }
+                    }
+
+
+                    /* ========================================= */
+                    /* CENTER GLOW */
+                    /* ========================================= */
+
+                    @keyframes glowPulse {
+                        0%, 100% {
+                            opacity: 0.25;
+                            transform: translate(-50%, -50%) scale(0.9);
+                        }
+
+                        50% {
+                            opacity: 0.55;
+                            transform: translate(-50%, -50%) scale(1.08);
+                        }
+                    }
+
+
+                    /* ========================================= */
+                    /* QR SCAN */
+                    /* ========================================= */
+
+                    @keyframes scan {
+                        0% {
+                            top: 0%;
+                            opacity: 0;
+                        }
+
+                        10% {
+                            opacity: 1;
+                        }
+
+                        90% {
+                            opacity: 1;
+                        }
+
+                        100% {
+                            top: 100%;
+                            opacity: 0;
+                        }
+                    }
+
+
+                    /* ========================================= */
+                    /* SMALL PULSE */
+                    /* ========================================= */
+
+                    @keyframes pulse {
+                        0%, 100% {
+                            opacity: 0.35;
+                            transform: scale(0.85);
+                        }
+
+                        50% {
+                            opacity: 1;
+                            transform: scale(1.15);
+                        }
+                    }
+
+
+                    /* ========================================= */
+                    /* ARROW */
+                    /* ========================================= */
+
+                    @keyframes arrow {
+                        0%, 100% {
+                            transform: translateX(0);
+                        }
+
+                        50% {
+                            transform: translateX(6px);
+                        }
+                    }
+
+
+                    /* ========================================= */
+                    /* PARTICLES */
+                    /* ========================================= */
+
+                    @keyframes floatUp {
+                        0% {
+                            transform: translateY(0) scale(0.7);
+                            opacity: 0;
+                        }
+
+                        10% {
+                            opacity: 0.7;
+                        }
+
+                        50% {
+                            opacity: 1;
+                        }
+
+                        90% {
+                            opacity: 0.5;
+                        }
+
+                        100% {
+                            transform: translateY(-115vh) scale(1);
+                            opacity: 0;
+                        }
+                    }
+
+
+                    /* ========================================= */
+                    /* HORIZONTAL SHIMMER */
+                    /* ========================================= */
+
+                    @keyframes shimmer {
+                        0% {
+                            transform: translateX(0);
+                            opacity: 0;
+                        }
+
+                        10% {
+                            opacity: 1;
+                        }
+
+                        50% {
+                            opacity: 0.7;
+                        }
+
+                        90% {
+                            opacity: 1;
+                        }
+
+                        100% {
+                            transform: translateX(180vw);
+                            opacity: 0;
+                        }
+                    }
+
+                    `}
+                </style>
+
+
+                {/* ================================================= */}
+                {/* BACKGROUND GRID */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+
+                        backgroundImage:
+                            "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+
+                        backgroundSize: "48px 48px",
+
+                        opacity: 0.5,
+
+                        maskImage:
+                            "radial-gradient(circle at center, black 10%, transparent 78%)",
+
+                        WebkitMaskImage:
+                            "radial-gradient(circle at center, black 10%, transparent 78%)",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* LARGE GRADIENT SQUARES */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "420px",
+                        height: "420px",
+
+                        left: "-150px",
+                        top: "-80px",
+
+                        background:
+                            "linear-gradient(135deg, rgba(142,164,255,0.11), rgba(142,164,255,0.015), transparent 70%)",
+
+                        border:
+                            "1px solid rgba(142,164,255,0.10)",
+
+                        transform: "rotate(18deg)",
+
+                        filter: "blur(0.2px)",
+
+                        animation:
+                            "squareFloat 9s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "300px",
+                        height: "300px",
+
+                        right: "-100px",
+                        top: "5%",
+
+                        background:
+                            "linear-gradient(135deg, rgba(97,230,216,0.09), rgba(97,230,216,0.01), transparent 70%)",
+
+                        border:
+                            "1px solid rgba(97,230,216,0.09)",
+
+                        transform: "rotate(-15deg)",
+
+                        animation:
+                            "squareFloatReverse 10s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "250px",
+                        height: "250px",
+
+                        left: "5%",
+                        bottom: "-100px",
+
+                        background:
+                            "linear-gradient(135deg, rgba(97,230,216,0.06), transparent 70%)",
+
+                        border:
+                            "1px solid rgba(97,230,216,0.07)",
+
+                        transform: "rotate(-12deg)",
+
+                        animation:
+                            "squareFloatReverse 8s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "360px",
+                        height: "360px",
+
+                        right: "-120px",
+                        bottom: "-100px",
+
+                        background:
+                            "linear-gradient(135deg, rgba(142,164,255,0.07), transparent 70%)",
+
+                        border:
+                            "1px solid rgba(142,164,255,0.07)",
+
+                        transform: "rotate(20deg)",
+
+                        animation:
+                            "squareFloat 11s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* SMALL FLOATING SQUARES */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "80px",
+                        height: "80px",
+
+                        left: "22%",
+                        top: "12%",
+
+                        border:
+                            "1px solid rgba(97,230,216,0.13)",
+
+                        background:
+                            "rgba(97,230,216,0.018)",
+
+                        transform: "rotate(25deg)",
+
+                        animation:
+                            "squareFloat 6s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "55px",
+                        height: "55px",
+
+                        right: "20%",
+                        top: "15%",
+
+                        border:
+                            "1px solid rgba(142,164,255,0.13)",
+
+                        background:
+                            "rgba(142,164,255,0.018)",
+
+                        transform: "rotate(-20deg)",
+
+                        animation:
+                            "squareFloatReverse 7s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "100px",
+                        height: "100px",
+
+                        right: "18%",
+                        bottom: "12%",
+
+                        border:
+                            "1px solid rgba(97,230,216,0.10)",
+
+                        background:
+                            "rgba(97,230,216,0.015)",
+
+                        transform: "rotate(12deg)",
+
+                        animation:
+                            "squareFloat 8s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* FLOATING PARTICLES */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        overflow: "hidden",
+                        pointerEvents: "none"
+                    }}
+                >
+
+                    {(typeof particles !== "undefined"
+                            ? particles
+                            : Array.from({ length: 35 })
+                    ).map((_, index) => {
+
+                        const size =
+                            2 + (index % 4);
+
+                        const left =
+                            (index * 37) % 100;
+
+                        const duration =
+                            8 + (index % 8);
+
+                        const delay =
+                            -(index % 12);
+
+                        const drift =
+                            index % 2 === 0 ? 1 : -1;
+
+                        return (
+                            <div
+                                key={index}
+                                style={{
+                                    position: "absolute",
+
+                                    left: `${left}%`,
+
+                                    bottom: "-20px",
+
+                                    width: `${size}px`,
+                                    height: `${size}px`,
+
+                                    borderRadius: "50%",
+
+                                    background:
+                                        index % 3 === 0
+                                            ? "#61E6D8"
+                                            : "#8EA4FF",
+
+                                    boxShadow:
+                                        index % 3 === 0
+                                            ? "0 0 12px rgba(97,230,216,0.7)"
+                                            : "0 0 10px rgba(142,164,255,0.6)",
+
+                                    opacity: 0,
+
+                                    animation:
+                                        `floatUp ${duration}s linear infinite`,
+
+                                    animationDelay:
+                                        `${delay}s`,
+
+                                    marginLeft:
+                                        `${drift * (index % 30)}px`
+                                }}
+                            />
+                        );
+                    })}
+
+                </div>
+
+
+                {/* ================================================= */}
+                {/* HORIZONTAL LIGHT */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "700px",
+                        height: "1px",
+
+                        top: "22%",
+                        left: "-700px",
+
+                        background:
+                            "linear-gradient(90deg, transparent, rgba(97,230,216,0.18), transparent)",
+
+                        animation:
+                            "shimmer 8s linear infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "500px",
+                        height: "1px",
+
+                        bottom: "20%",
+                        right: "-500px",
+
+                        background:
+                            "linear-gradient(90deg, transparent, rgba(142,164,255,0.15), transparent)",
+
+                        animation:
+                            "shimmer 10s linear infinite 3s",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* CENTER GLOW */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "850px",
+                        height: "850px",
+
+                        borderRadius: "50%",
+
+                        background:
+                            "radial-gradient(circle, rgba(97,230,216,0.14) 0%, rgba(142,164,255,0.055) 34%, transparent 68%)",
+
+                        left: "50%",
+                        top: "50%",
+
+                        animation:
+                            "glowPulse 6s ease-in-out infinite",
+
+                        filter: "blur(35px)",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* TOP LABEL */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        top: "6.5%",
+                        left: "7%",
+
+                        display: "flex",
+                        alignItems: "center",
+
+                        gap: "12px",
+
+                        fontSize: "10px",
+
+                        fontWeight: 600,
+
+                        letterSpacing: "0.3em",
+
+                        color: "#61E6D8",
+
+                        textTransform: "uppercase",
+
+                        zIndex: 5
+                    }}
+                >
+
+                    <div
+                        style={{
+                            width: "7px",
+                            height: "7px",
+
+                            borderRadius: "50%",
+
+                            background: "#61E6D8",
+
+                            boxShadow:
+                                "0 0 16px rgba(97,230,216,0.9)",
+
+                            animation:
+                                "pulse 2s ease-in-out infinite"
+                        }}
+                    />
+
+                    Internship Presentation · 2026
+
+                </div>
+
+
+                {/* ================================================= */}
+                {/* MAIN CONTENT */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "relative",
+
+                        zIndex: 10,
+
+                        display: "flex",
+
+                        flexDirection: "column",
+
+                        alignItems: "center",
+
+                        justifyContent: "center",
+
+                        maxWidth: "90vw"
+                    }}
+                >
+
+
+                    {/* SMALL TITLE */}
+
+                    <div
+                        style={{
+                            marginBottom: "18px",
+
+                            fontSize: "11px",
+
+                            fontWeight: 600,
+
+                            letterSpacing: "0.35em",
+
+                            color:
+                                "rgba(255,255,255,0.38)",
+
+                            textTransform: "uppercase"
+                        }}
+                    >
+                        Before we begin
+                    </div>
+
+
+                    {/* MAIN TITLE */}
+
+                    <div
+                        style={{
+                            fontSize:
+                                "clamp(38px, 4vw, 58px)",
+
+                            lineHeight: "0.95",
+
+                            letterSpacing: "-0.055em",
+
+                            fontWeight: 700,
+
+                            marginBottom: "32px",
+
+                            textAlign: "center"
+                        }}
+                    >
+
+                        Take a look.
+
+                        <span
+                            style={{
+                                background:
+                                    "linear-gradient(90deg,#ffffff,#8EA4FF,#61E6D8)",
+
+                                WebkitBackgroundClip:
+                                    "text",
+
+                                WebkitTextFillColor:
+                                    "transparent"
+                            }}
+                        >
+                            {" "}Scan it.
+                        </span>
+
+                    </div>
+
+
+                    {/* ================================================= */}
+                    {/* QR FRAME */}
+                    {/* ================================================= */}
+
+                    <div
+                        style={{
+                            position: "relative",
+
+                            width:
+                                "clamp(360px, 35vw, 520px)",
+
+                            height:
+                                "clamp(360px, 35vw, 520px)",
+
+                            padding: "24px",
+
+                            background:
+                                "rgba(255,255,255,0.98)",
+
+                            borderRadius: "30px",
+
+                            boxShadow:
+                                "0 40px 120px rgba(0,0,0,0.65), 0 0 100px rgba(97,230,216,0.18)",
+
+                            overflow: "hidden",
+
+                            boxSizing: "border-box"
+                        }}
+                    >
+
+                        {/* TOP LEFT */}
+
+                        <div
+                            style={{
+                                position: "absolute",
+
+                                top: "15px",
+                                left: "15px",
+
+                                width: "22px",
+                                height: "22px",
+
+                                borderTop:
+                                    "2px solid #61E6D8",
+
+                                borderLeft:
+                                    "2px solid #61E6D8",
+
+                                zIndex: 5
+                            }}
+                        />
+
+
+                        {/* TOP RIGHT */}
+
+                        <div
+                            style={{
+                                position: "absolute",
+
+                                top: "15px",
+                                right: "15px",
+
+                                width: "22px",
+                                height: "22px",
+
+                                borderTop:
+                                    "2px solid #61E6D8",
+
+                                borderRight:
+                                    "2px solid #61E6D8",
+
+                                zIndex: 5
+                            }}
+                        />
+
+
+                        {/* BOTTOM LEFT */}
+
+                        <div
+                            style={{
+                                position: "absolute",
+
+                                bottom: "15px",
+                                left: "15px",
+
+                                width: "22px",
+                                height: "22px",
+
+                                borderBottom:
+                                    "2px solid #61E6D8",
+
+                                borderLeft:
+                                    "2px solid #61E6D8",
+
+                                zIndex: 5
+                            }}
+                        />
+
+
+                        {/* BOTTOM RIGHT */}
+
+                        <div
+                            style={{
+                                position: "absolute",
+
+                                bottom: "15px",
+                                right: "15px",
+
+                                width: "22px",
+                                height: "22px",
+
+                                borderBottom:
+                                    "2px solid #61E6D8",
+
+                                borderRight:
+                                    "2px solid #61E6D8",
+
+                                zIndex: 5
+                            }}
+                        />
+
+
+                        {/* QR IMAGE */}
+
+                        <img
+                            src="/screenshots/Friday QR Code 3.jpeg"
+                            alt="QR Code"
+
+                            style={{
+                                width: "100%",
+                                height: "100%",
+
+                                objectFit: "contain",
+
+                                display: "block",
+
+                                position: "relative",
+
+                                zIndex: 2
+                            }}
+                        />
+
+
+                        {/* SCANNING LINE */}
+
+                        <div
+                            style={{
+                                position: "absolute",
+
+                                left: "20px",
+                                right: "20px",
+
+                                height: "3px",
+
+                                background:
+                                    "linear-gradient(90deg, transparent, #61E6D8, transparent)",
+
+                                boxShadow:
+                                    "0 0 20px rgba(97,230,216,1)",
+
+                                animation:
+                                    "scan 2.8s ease-in-out infinite",
+
+                                pointerEvents: "none",
+
+                                zIndex: 4
+                            }}
+                        />
+
+                    </div>
+
+
+                    {/* ================================================= */}
+                    {/* BELOW QR */}
+                    {/* ================================================= */}
+
+                    <div
+                        style={{
+                            marginTop: "24px",
+
+                            display: "flex",
+                            alignItems: "center",
+
+                            gap: "12px"
+                        }}
+                    >
+
+                        <div
+                            style={{
+                                width: "34px",
+                                height: "34px",
+
+                                borderRadius: "50%",
+
+                                border:
+                                    "1px solid rgba(97,230,216,0.4)",
+
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+
+                                color: "#61E6D8",
+
+                                animation:
+                                    "arrow 2s ease-in-out infinite"
+                            }}
+                        >
+                            →
+                        </div>
+
+
+                        <div
+                            style={{
+                                fontSize: "12px",
+
+                                fontWeight: 600,
+
+                                letterSpacing:
+                                    "0.18em",
+
+                                color:
+                                    "rgba(255,255,255,0.65)",
+
+                                textTransform:
+                                    "uppercase"
+                            }}
+                        >
+                            Scan to explore the project
+                        </div>
+
+                    </div>
+
+
+                    {/* ================================================= */}
+                    {/* MICRO TEXT */}
+                    {/* ================================================= */}
+
+                    <div
+                        style={{
+                            marginTop: "8px",
+
+                            fontFamily: "monospace",
+
+                            fontSize: "8px",
+
+                            letterSpacing:
+                                "0.16em",
+
+                            color:
+                                "rgba(255,255,255,0.24)",
+
+                            textTransform:
+                                "uppercase"
+                        }}
+                    >
+                        Point your camera · No app needed
+                    </div>
+
+                </div>
+
+
+                {/* ================================================= */}
+                {/* BOTTOM LEFT LABEL */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        left: "7%",
+                        bottom: "8%",
+
+                        fontFamily: "monospace",
+
+                        fontSize: "8px",
+
+                        letterSpacing: "0.22em",
+
+                        color:
+                            "rgba(255,255,255,0.18)",
+
+                        zIndex: 5
+                    }}
+                >
+                    VASS · AEM EVENT MANAGEMENT
+                </div>
+
+
+                {/* ================================================= */}
+                {/* BOTTOM RIGHT LABEL */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        right: "7%",
+                        bottom: "8%",
+
+                        fontFamily: "monospace",
+
+                        fontSize: "8px",
+
+                        letterSpacing: "0.22em",
+
+                        color:
+                            "rgba(255,255,255,0.18)",
+
+                        zIndex: 5
+                    }}
+                >
+                    PRESENTATION STARTING SOON
+                </div>
+
+
+                {/* ================================================= */}
+                {/* VERTICAL TEXT */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        right: "3%",
+                        top: "50%",
+
+                        transform:
+                            "translateY(-50%)",
+
+                        writingMode:
+                            "vertical-rl",
+
+                        fontFamily: "monospace",
+
+                        fontSize: "7px",
+
+                        letterSpacing: "0.3em",
+
+                        color:
+                            "rgba(255,255,255,0.12)",
+
+                        zIndex: 5
+                    }}
+                >
+                    SCAN · EXPLORE · EXPERIENCE · 2026
+                </div>
+
+            </div>
+
+        </SlideRoot>
+    );
+};
 
 /* ---------------- SLIDES ---------------- */
 
@@ -5081,4 +5573,5 @@ window.Slides = [
     window.EventPlatformSlide,
     window.StartingPointSlide,
     window.FromVisionToWorkSlide,
+    window.QRCodeSlide,
 ]
