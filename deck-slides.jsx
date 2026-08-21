@@ -1334,9 +1334,9 @@ window.FullStackTeam = () => {
 
     const team = [
         {
-            name: "Davor Angelov",
+            name: "Andrej Ristovski",
             role: "Full Stack Developer",
-            image: "screenshots/davor.png"
+            image: "screenshots/andrej.png"
         },
         {
             name: "Stefan Stojanovski",
@@ -1344,10 +1344,10 @@ window.FullStackTeam = () => {
             image: "screenshots/stefan.png"
         },
         {
-            name: "Andrej Ristovski",
+            name: "Davor Angelov",
             role: "Full Stack Developer",
-            image: "screenshots/andrej.png"
-        }
+            image: "screenshots/davor.png"
+        },
     ];
 
     return (
@@ -1465,15 +1465,21 @@ window.FullStackTeam = () => {
                                     overflow: "hidden"
                                 }}
                             >
+
                                 <img
                                     src={member.image}
                                     alt={member.name}
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        objectFit: "cover"
+                                        objectFit: "cover",
+                                        ...(member.name === "Andrej Ristovski" && {
+                                            objectPosition: "center 5%",
+                                            transform: "scale(1.45)"
+                                        })
                                     }}
                                 />
+
                             </div>
 
                             <div
