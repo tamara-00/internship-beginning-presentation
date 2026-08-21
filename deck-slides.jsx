@@ -5567,6 +5567,1064 @@ window.QRCodeSlide = () => {
     );
 };
 
+/* ---------------- AEM DEMO ---------------- */
+
+window.AEMDemoSlide = () => {
+
+    return (
+        <SlideRoot>
+
+            <div
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                    background: "#050B16",
+                    color: "#fff",
+                    fontFamily:
+                        "system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+                }}
+            >
+
+                <style>
+                    {`
+
+                    @keyframes pulse {
+                        0%,100% {
+                            opacity: .35;
+                            transform: scale(1);
+                        }
+
+                        50% {
+                            opacity: 1;
+                            transform: scale(1.5);
+                        }
+                    }
+
+                    @keyframes drift {
+                        0%,100% {
+                            transform:
+                                translate3d(0,0,0)
+                                scale(1);
+                        }
+
+                        50% {
+                            transform:
+                                translate3d(25px,-20px,0)
+                                scale(1.08);
+                        }
+                    }
+
+                    @keyframes drift2 {
+                        0%,100% {
+                            transform:
+                                translate3d(0,0,0);
+                        }
+
+                        50% {
+                            transform:
+                                translate3d(-30px,25px,0);
+                        }
+                    }
+
+                    @keyframes reveal {
+                        from {
+                            opacity: 0;
+                            transform:
+                                translateY(25px)
+                                scale(.96);
+                        }
+
+                        to {
+                            opacity: 1;
+                            transform:
+                                translateY(0)
+                                scale(1);
+                        }
+                    }
+
+                    @keyframes float {
+                        0%,100% {
+                            transform:
+                                translateY(0);
+                        }
+
+                        50% {
+                            transform:
+                                translateY(-7px);
+                        }
+                    }
+
+                    @keyframes rotateSlow {
+                        from {
+                            transform:
+                                rotate(0deg);
+                        }
+
+                        to {
+                            transform:
+                                rotate(360deg);
+                        }
+                    }
+
+                    @keyframes videoGlow {
+                        0%,100% {
+                            opacity: .35;
+                            transform:
+                                translate(-50%, -50%)
+                                scale(.98);
+                        }
+
+                        50% {
+                            opacity: .7;
+                            transform:
+                                translate(-50%, -50%)
+                                scale(1.02);
+                        }
+                    }
+
+                    `}
+
+                </style>
+
+
+                {/* ================================================= */}
+                {/* BACKGROUND — RED AEM GLOW */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "750px",
+                        height: "750px",
+
+                        left: "-220px",
+                        top: "-300px",
+
+                        borderRadius: "50%",
+
+                        background:
+                            "radial-gradient(circle, rgba(255,45,55,.17), transparent 65%)",
+
+                        filter: "blur(35px)",
+
+                        animation:
+                            "drift 9s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* BACKGROUND — ORANGE GLOW */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        width: "650px",
+                        height: "650px",
+
+                        right: "-200px",
+                        bottom: "-260px",
+
+                        borderRadius: "50%",
+
+                        background:
+                            "radial-gradient(circle, rgba(255,105,30,.13), transparent 65%)",
+
+                        filter: "blur(40px)",
+
+                        animation:
+                            "drift2 11s ease-in-out infinite",
+
+                        pointerEvents: "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* HUGE CENTER AURA */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        left: "50%",
+                        top: "57%",
+
+                        width: "92%",
+                        height: "75%",
+
+                        borderRadius: "50%",
+
+                        background:
+                            "radial-gradient(ellipse, rgba(255,45,85,.13), rgba(255,90,0,.035) 48%, transparent 72%)",
+
+                        filter: "blur(45px)",
+
+                        animation:
+                            "videoGlow 5s ease-in-out infinite",
+
+                        pointerEvents: "none",
+
+                        zIndex: 1
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* SUBTLE GRID */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        inset: 0,
+
+                        opacity: .022,
+
+                        backgroundImage: `
+                            linear-gradient(
+                                rgba(255,255,255,.5) 1px,
+                                transparent 1px
+                            ),
+                            linear-gradient(
+                                90deg,
+                                rgba(255,255,255,.5) 1px,
+                                transparent 1px
+                            )
+                        `,
+
+                        backgroundSize:
+                            "45px 45px",
+
+                        pointerEvents:
+                            "none"
+                    }}
+                />
+
+
+                {/* ================================================= */}
+                {/* HUGE AEM BACKGROUND */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        left: "-20px",
+                        bottom: "-75px",
+
+                        fontSize:
+                            "clamp(180px, 25vw, 390px)",
+
+                        fontWeight: 950,
+
+                        letterSpacing:
+                            "-.09em",
+
+                        lineHeight: .75,
+
+                        color:
+                            "rgba(255,255,255,.018)",
+
+                        userSelect: "none",
+
+                        pointerEvents: "none",
+
+                        zIndex: 0
+                    }}
+                >
+                    AEM
+                </div>
+
+
+                {/* ================================================= */}
+                {/* TOP HEADER */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        top: "30px",
+
+                        left: "52px",
+                        right: "52px",
+
+                        display: "flex",
+
+                        justifyContent:
+                            "space-between",
+
+                        alignItems:
+                            "center",
+
+                        zIndex: 100
+                    }}
+                >
+
+                    {/* LEFT */}
+
+                    <div
+                        style={{
+                            display: "flex",
+
+                            alignItems:
+                                "center",
+
+                            gap: "9px"
+                        }}
+                    >
+
+                        <div
+                            style={{
+                                width: "7px",
+                                height: "7px",
+
+                                borderRadius:
+                                    "50%",
+
+                                background:
+                                    "#FF2D55",
+
+                                boxShadow:
+                                    "0 0 16px rgba(255,45,85,.9)",
+
+                                animation:
+                                    "pulse 1.8s infinite"
+                            }}
+                        />
+
+                        <span
+                            style={{
+                                fontSize: "9px",
+
+                                fontWeight: 800,
+
+                                letterSpacing:
+                                    ".32em",
+
+                                color:
+                                    "#FF5A67"
+                            }}
+                        >
+                            AEM DEMO
+                        </span>
+
+                    </div>
+
+
+                    {/* RIGHT */}
+
+                    <div
+                        style={{
+                            fontFamily:
+                                "monospace",
+
+                            fontSize: "8px",
+
+                            color:
+                                "rgba(255,255,255,.28)",
+
+                            textAlign:
+                                "right",
+
+                            lineHeight: 1.7
+                        }}
+                    >
+
+                        <div>
+                            ADOBE EXPERIENCE MANAGER
+                        </div>
+
+                        <div
+                            style={{
+                                color:
+                                    "#FF5A67"
+                            }}
+                        >
+                            LIVE / DEMO
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {/* ================================================= */}
+                {/* MAIN CONTENT */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position: "absolute",
+
+                        inset: 0,
+
+                        display: "flex",
+
+                        flexDirection:
+                            "column",
+
+                        alignItems:
+                            "center",
+
+                        justifyContent:
+                            "center",
+
+                        boxSizing:
+                            "border-box",
+
+                        paddingTop:
+                            "42px",
+
+                        paddingBottom:
+                            "42px",
+
+                        zIndex: 40
+                    }}
+                >
+
+
+                    {/* ================================================= */}
+                    {/* TITLE */}
+                    {/* ================================================= */}
+
+                    <div
+                        style={{
+                            textAlign:
+                                "center",
+
+                            marginBottom:
+                                "16px",
+
+                            animation:
+                                "reveal .8s ease both",
+
+                            flexShrink: 0,
+
+                            zIndex: 50
+                        }}
+                    >
+
+
+
+                        {/* MAIN TITLE */}
+
+                        <div
+                            style={{
+                                fontSize:
+                                    "clamp(32px, 3.6vw, 56px)",
+
+                                fontWeight:
+                                    900,
+
+                                letterSpacing:
+                                    "-.065em",
+
+                                lineHeight:
+                                    .9
+                            }}
+                        >
+                            No more screenshots.
+                        </div>
+
+
+                        {/* GRADIENT TITLE */}
+
+                        <div
+                            style={{
+                                marginTop:
+                                    "6px",
+
+                                fontSize:
+                                    "clamp(32px, 3.6vw, 56px)",
+
+                                fontWeight:
+                                    900,
+
+                                letterSpacing:
+                                    "-.065em",
+
+                                lineHeight:
+                                    .9,
+
+                                background:
+                                    "linear-gradient(90deg, #FF6B78, #FFB067)",
+
+                                WebkitBackgroundClip:
+                                    "text",
+
+                                WebkitTextFillColor:
+                                    "transparent"
+                            }}
+                        >
+                            Let's see it in action.
+                        </div>
+
+                    </div>
+
+
+                    {/* ================================================= */}
+                    {/* VIDEO CONTAINER */}
+                    {/* ================================================= */}
+
+                    <div
+                        style={{
+                            position:
+                                "relative",
+
+                            width:
+                                "min(92vw, 1400px)",
+
+                            height:
+                                "min(70vh, 700px)",
+
+                            display:
+                                "flex",
+
+                            alignItems:
+                                "center",
+
+                            justifyContent:
+                                "center",
+
+                            animation:
+                                "reveal 1s .15s ease both",
+
+                            flexShrink:
+                                1,
+
+                            minHeight:
+                                0
+                        }}
+                    >
+
+
+                        {/* OUTER GLOW */}
+
+                        <div
+                            style={{
+                                position:
+                                    "absolute",
+
+                                inset:
+                                    "-42px",
+
+                                borderRadius:
+                                    "35px",
+
+                                background:
+                                    "radial-gradient(ellipse, rgba(255,45,85,.20), transparent 68%)",
+
+                                filter:
+                                    "blur(30px)",
+
+                                pointerEvents:
+                                    "none",
+
+                                zIndex:
+                                    0
+                            }}
+                        />
+
+
+                        {/* ================================================= */}
+                        {/* VIDEO FRAME */}
+                        {/* ================================================= */}
+
+                        <div
+                            style={{
+                                position:
+                                    "relative",
+
+                                width:
+                                    "100%",
+
+                                height:
+                                    "100%",
+
+                                padding:
+                                    "10px",
+
+                                borderRadius:
+                                    "26px",
+
+                                background:
+                                    "linear-gradient(145deg, #1B2433, #080D16)",
+
+                                border:
+                                    "1px solid rgba(255,255,255,.16)",
+
+                                boxShadow: `
+                                    0 45px 120px rgba(0,0,0,.85),
+                                    0 0 90px rgba(255,45,85,.14),
+                                    inset 0 1px 0 rgba(255,255,255,.07)
+                                `,
+
+                                overflow:
+                                    "hidden",
+
+                                boxSizing:
+                                    "border-box",
+
+                                zIndex:
+                                    2
+                            }}
+                        >
+
+
+                            {/* ================================================= */}
+                            {/* BROWSER BAR */}
+                            {/* ================================================= */}
+
+                            <div
+                                style={{
+                                    height:
+                                        "30px",
+
+                                    display:
+                                        "flex",
+
+                                    alignItems:
+                                        "center",
+
+                                    gap:
+                                        "6px",
+
+                                    padding:
+                                        "0 9px",
+
+                                    boxSizing:
+                                        "border-box"
+                                }}
+                            >
+
+                                <span
+                                    style={{
+                                        width:
+                                            "7px",
+
+                                        height:
+                                            "7px",
+
+                                        borderRadius:
+                                            "50%",
+
+                                        background:
+                                            "#FF5F57"
+                                    }}
+                                />
+
+                                <span
+                                    style={{
+                                        width:
+                                            "7px",
+
+                                        height:
+                                            "7px",
+
+                                        borderRadius:
+                                            "50%",
+
+                                        background:
+                                            "#FEBC2E"
+                                    }}
+                                />
+
+                                <span
+                                    style={{
+                                        width:
+                                            "7px",
+
+                                        height:
+                                            "7px",
+
+                                        borderRadius:
+                                            "50%",
+
+                                        background:
+                                            "#28C840"
+                                    }}
+                                />
+
+
+                                <div
+                                    style={{
+                                        marginLeft:
+                                            "10px",
+
+                                        flex: 1,
+
+                                        height:
+                                            "17px",
+
+                                        borderRadius:
+                                            "5px",
+
+                                        background:
+                                            "rgba(255,255,255,.045)",
+
+                                        border:
+                                            "1px solid rgba(255,255,255,.05)"
+                                    }}
+                                />
+
+                            </div>
+
+
+                            {/* ================================================= */}
+                            {/* VIDEO */}
+                            {/* ================================================= */}
+
+                            <div
+                                style={{
+                                    position:
+                                        "relative",
+
+                                    width:
+                                        "100%",
+
+                                    height:
+                                        "calc(100% - 30px)",
+
+                                    borderRadius:
+                                        "15px",
+
+                                    overflow:
+                                        "hidden",
+
+                                    background:
+                                        "#02050A",
+
+                                    display:
+                                        "flex",
+
+                                    alignItems:
+                                        "center",
+
+                                    justifyContent:
+                                        "center"
+                                }}
+                            >
+
+                                <video
+                                    src="/screenshots/demo.mov"
+
+                                    controls
+
+                                    autoPlay
+
+                                    muted
+
+                                    loop
+
+                                    playsInline
+
+                                    style={{
+                                        width:
+                                            "100%",
+
+                                        height:
+                                            "100%",
+
+                                        objectFit:
+                                            "contain",
+
+                                        display:
+                                            "block",
+
+                                        background:
+                                            "#02050A"
+                                    }}
+                                />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                {/* ================================================= */}
+                {/* FLOATING AUTHOR LABEL */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position:
+                            "absolute",
+
+                        left:
+                            "3.5%",
+
+                        top:
+                            "43%",
+
+                        zIndex:
+                            60,
+
+                        padding:
+                            "8px 11px",
+
+                        borderRadius:
+                            "8px",
+
+                        background:
+                            "rgba(8,14,24,.82)",
+
+                        border:
+                            "1px solid rgba(255,90,103,.22)",
+
+                        backdropFilter:
+                            "blur(12px)",
+
+                        fontFamily:
+                            "monospace",
+
+                        fontSize:
+                            "7px",
+
+                        letterSpacing:
+                            ".12em",
+
+                        color:
+                            "#FF6B78",
+
+                        animation:
+                            "float 4s ease-in-out infinite"
+                    }}
+                >
+                    AUTHOR
+                </div>
+
+
+                {/* ================================================= */}
+                {/* FLOATING COMPONENT LABEL */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position:
+                            "absolute",
+
+                        right:
+                            "3.5%",
+
+                        top:
+                            "43%",
+
+                        zIndex:
+                            60,
+
+                        padding:
+                            "8px 11px",
+
+                        borderRadius:
+                            "8px",
+
+                        background:
+                            "rgba(8,14,24,.82)",
+
+                        border:
+                            "1px solid rgba(255,176,103,.2)",
+
+                        backdropFilter:
+                            "blur(12px)",
+
+                        fontFamily:
+                            "monospace",
+
+                        fontSize:
+                            "7px",
+
+                        letterSpacing:
+                            ".12em",
+
+                        color:
+                            "#FFB067",
+
+                        animation:
+                            "float 4.5s .5s ease-in-out infinite"
+                    }}
+                >
+                    COMPONENTS
+                </div>
+
+
+                {/* ================================================= */}
+                {/* BOTTOM FLOW */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position:
+                            "absolute",
+
+                        left:
+                            "50%",
+
+                        bottom:
+                            "24px",
+
+                        transform:
+                            "translateX(-50%)",
+
+                        zIndex:
+                            100,
+
+                        display:
+                            "flex",
+
+                        alignItems:
+                            "center",
+
+                        gap:
+                            "11px",
+
+                        fontFamily:
+                            "monospace",
+
+                        fontSize:
+                            "7px",
+
+                        letterSpacing:
+                            ".16em",
+
+                        color:
+                            "rgba(255,255,255,.28)",
+
+                        whiteSpace:
+                            "nowrap"
+                    }}
+                >
+
+                    <span
+                        style={{
+                            color:
+                                "#FF5A67"
+                        }}
+                    >
+                        ●
+                    </span>
+
+                    AUTHORING
+
+                    <span
+                        style={{
+                            color:
+                                "rgba(255,255,255,.15)"
+                        }}
+                    >
+                        →
+                    </span>
+
+                    EXPERIENCE
+
+                    <span
+                        style={{
+                            color:
+                                "rgba(255,255,255,.15)"
+                        }}
+                    >
+                        →
+                    </span>
+
+                    <span
+                        style={{
+                            color:
+                                "#FFB067"
+                        }}
+                    >
+                        LIVE
+                    </span>
+
+                </div>
+
+
+                {/* ================================================= */}
+                {/* CORNER ORBIT */}
+                {/* ================================================= */}
+
+                <div
+                    style={{
+                        position:
+                            "absolute",
+
+                        right:
+                            "45px",
+
+                        bottom:
+                            "40px",
+
+                        width:
+                            "65px",
+
+                        height:
+                            "65px",
+
+                        border:
+                            "1px solid rgba(255,90,103,.08)",
+
+                        borderRadius:
+                            "50%",
+
+                        animation:
+                            "rotateSlow 25s linear infinite",
+
+                        pointerEvents:
+                            "none"
+                    }}
+                />
+
+
+                <div
+                    style={{
+                        position:
+                            "absolute",
+
+                        right:
+                            "70px",
+
+                        bottom:
+                            "65px",
+
+                        width:
+                            "15px",
+
+                        height:
+                            "15px",
+
+                        borderRadius:
+                            "50%",
+
+                        background:
+                            "rgba(255,90,103,.35)",
+
+                        filter:
+                            "blur(4px)",
+
+                        animation:
+                            "pulse 2.5s infinite"
+                    }}
+                />
+
+            </div>
+
+        </SlideRoot>
+    );
+};
+
 /* ---------------- SLIDES ---------------- */
 
 window.Slides = [
@@ -5579,5 +6637,6 @@ window.Slides = [
     window.EventPlatformSlide,
     window.StartingPointSlide,
     window.FromVisionToWorkSlide,
+    window.AEMDemoSlide,
     window.QRCodeSlide,
 ]
