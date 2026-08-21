@@ -1334,9 +1334,9 @@ window.FullStackTeam = () => {
 
     const team = [
         {
-            name: "Andrej Ristovski",
+            name: "Davor Angelov",
             role: "Full Stack Developer",
-            image: "screenshots/andrej.png"
+            image: "screenshots/davor.png"
         },
         {
             name: "Stefan Stojanovski",
@@ -1344,9 +1344,9 @@ window.FullStackTeam = () => {
             image: "screenshots/stefan.png"
         },
         {
-            name: "Davor Angelov",
+            name: "Andrej Ristovski",
             role: "Full Stack Developer",
-            image: "screenshots/davor.png"
+            image: "screenshots/andrej.png"
         },
     ];
 
@@ -1475,7 +1475,7 @@ window.FullStackTeam = () => {
                                         objectFit: "cover",
                                         ...(member.name === "Andrej Ristovski" && {
                                             objectPosition: "center 5%",
-                                            transform: "scale(1.45)"
+                                            transform: "scale(1.25) translateY(-20px)"
                                         })
                                     }}
                                 />
