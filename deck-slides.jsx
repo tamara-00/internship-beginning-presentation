@@ -6637,13 +6637,12 @@ window.AEMCMSSlide = () => {
                 position: "relative",
                 overflow: "hidden",
                 fontFamily: "Inter, Arial, sans-serif",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
             }}
         >
 
-            {/* ================= BACKGROUND ================= */}
+            {/* ===================================================== */}
+            {/* BACKGROUND */}
+            {/* ===================================================== */}
 
             <div
                 style={{
@@ -6651,9 +6650,9 @@ window.AEMCMSSlide = () => {
                     width: "900px",
                     height: "900px",
                     borderRadius: "50%",
-                    background: "rgba(255, 95, 0, 0.10)",
-                    filter: "blur(150px)",
-                    top: "-550px",
+                    background: "rgba(255, 95, 0, 0.12)",
+                    filter: "blur(160px)",
+                    top: "-500px",
                     left: "50%",
                     transform: "translateX(-50%)",
                 }}
@@ -6662,55 +6661,86 @@ window.AEMCMSSlide = () => {
             <div
                 style={{
                     position: "absolute",
-                    width: "500px",
-                    height: "500px",
+                    width: "600px",
+                    height: "600px",
                     borderRadius: "50%",
-                    background: "rgba(255, 95, 0, 0.07)",
-                    filter: "blur(120px)",
-                    bottom: "-350px",
-                    right: "-200px",
+                    background: "rgba(255, 95, 0, 0.06)",
+                    filter: "blur(140px)",
+                    bottom: "-400px",
+                    right: "-250px",
                 }}
             />
 
+            {/* Huge background word */}
+
+            <div
+                style={{
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%, -50%) rotate(-7deg)",
+                    fontSize: "clamp(150px, 22vw, 340px)",
+                    fontWeight: 900,
+                    letterSpacing: "-0.09em",
+                    color: "rgba(255,255,255,.018)",
+                    whiteSpace: "nowrap",
+                    userSelect: "none",
+                    pointerEvents: "none",
+                }}
+            >
+                EXPERIENCE
+            </div>
+
+
             {/* subtle grid */}
+
             <div
                 style={{
                     position: "absolute",
                     inset: 0,
-                    opacity: 0.045,
+                    opacity: 0.035,
                     backgroundImage: `
-                        linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)
+                        linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)
                     `,
                     backgroundSize: "70px 70px",
                 }}
             />
 
-            {/* ================= MAIN ================= */}
+
+            {/* ===================================================== */}
+            {/* MAIN */}
+            {/* ===================================================== */}
 
             <div
                 style={{
                     position: "relative",
-                    zIndex: 2,
+                    zIndex: 5,
                     width: "92%",
                     maxWidth: "1450px",
-                    height: "92%",
+                    height: "100%",
+                    margin: "0 auto",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
+
+                    /* MOVE MAIN DOWN */
                     transform: "translateY(20%)",
                 }}
             >
 
-                {/* TOP LABEL */}
+
+                {/* ================================================= */}
+                {/* INTRO */}
+                {/* ================================================= */}
 
                 <div
                     style={{
                         display: "flex",
                         alignItems: "center",
-                        gap: "10px",
-                        marginBottom: "14px",
+                        gap: "12px",
+                        marginBottom: "12px",
                         fontSize: "11px",
                         fontWeight: 800,
                         letterSpacing: ".22em",
@@ -6718,6 +6748,7 @@ window.AEMCMSSlide = () => {
                         color: "#ff5f00",
                     }}
                 >
+
                     <span
                         style={{
                             width: "7px",
@@ -6729,72 +6760,95 @@ window.AEMCMSSlide = () => {
                     />
 
                     Adobe Experience Manager
+
                 </div>
 
 
+                {/* ================================================= */}
                 {/* TITLE */}
+                {/* ================================================= */}
 
-                <h1
+                <div
                     style={{
-                        margin: 0,
                         textAlign: "center",
-                        fontSize: "clamp(42px, 5vw, 72px)",
-                        lineHeight: 0.9,
-                        letterSpacing: "-0.065em",
-                        fontWeight: 800,
-                        marginBottom: "30px",
+                        marginBottom: "25px",
                     }}
                 >
-                    BEHIND THE{" "}
-                    <span
+
+                    <h1
                         style={{
-                            color: "#ff5f00",
+                            margin: 0,
+                            fontSize: "clamp(38px, 4.8vw, 68px)",
+                            lineHeight: ".9",
+                            letterSpacing: "-.065em",
+                            fontWeight: 850,
                         }}
                     >
-                        EXPERIENCE.
-                    </span>
-                </h1>
+                        BEHIND THAT{" "}
+                        <span
+                            style={{
+                                color: "#ff5f00",
+                            }}
+                        >
+                            EXPERIENCE.
+                        </span>
+                    </h1>
 
 
-                {/* ================= VIDEO FRAME ================= */}
+                    <div
+                        style={{
+                            marginTop: "12px",
+                            fontSize: "15px",
+                            color: "#8a8a8a",
+                        }}
+                    >
+                        There is a system making it all happen.
+                    </div>
+
+                </div>
+
+
+                {/* ================================================= */}
+                {/* VIDEO / AEM WINDOW */}
+                {/* ================================================= */}
 
                 <div
                     style={{
                         position: "relative",
-                        width: "min(92vw, 1220px)",
-                        height: "min(67vh, 610px)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        width: "min(92vw, 1160px)",
+                        height: "min(58vh, 520px)",
                     }}
                 >
 
-                    {/* outer glow */}
+                    {/* glow */}
 
                     <div
                         style={{
                             position: "absolute",
-                            inset: "-20px",
-                            borderRadius: "30px",
+                            inset: "-35px",
+                            borderRadius: "35px",
                             background:
-                                "radial-gradient(circle, rgba(255,95,0,.18), transparent 65%)",
-                            filter: "blur(25px)",
+                                "radial-gradient(circle, rgba(255,95,0,.22), transparent 65%)",
+                            filter: "blur(35px)",
                         }}
                     />
+
 
                     {/* orange frame */}
 
                     <div
                         style={{
                             position: "absolute",
-                            inset: "-1px",
-                            borderRadius: "24px",
-                            border: "1px solid rgba(255,95,0,.35)",
-                            pointerEvents: "none",
+                            inset: "-2px",
+                            borderRadius: "25px",
+                            border: "1px solid rgba(255,95,0,.38)",
                         }}
                     />
 
-                    {/* VIDEO */}
+
+                    {/* ================================================= */}
+                    {/* AEM WINDOW */}
+                    {/* ================================================= */}
 
                     <div
                         style={{
@@ -6804,18 +6858,137 @@ window.AEMCMSSlide = () => {
                             borderRadius: "22px",
                             overflow: "hidden",
                             background: "#050505",
-                            border: "1px solid rgba(255,255,255,.14)",
+                            border: "1px solid rgba(255,255,255,.15)",
                             boxShadow:
-                                "0 35px 100px rgba(0,0,0,.75)",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
+                                "0 40px 120px rgba(0,0,0,.8)",
                         }}
                     >
 
+                        {/* browser bar */}
+
+                        <div
+                            style={{
+                                position: "absolute",
+                                zIndex: 10,
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                height: "44px",
+                                display: "flex",
+                                alignItems: "center",
+                                padding: "0 18px",
+                                background: "rgba(8,8,8,.88)",
+                                backdropFilter: "blur(18px)",
+                                borderBottom:
+                                    "1px solid rgba(255,255,255,.1)",
+                            }}
+                        >
+
+                            <div
+                                style={{
+                                    display: "flex",
+                                    gap: "6px",
+                                }}
+                            >
+
+                                <span
+                                    style={{
+                                        width: "7px",
+                                        height: "7px",
+                                        borderRadius: "50%",
+                                        background: "#333",
+                                    }}
+                                />
+
+                                <span
+                                    style={{
+                                        width: "7px",
+                                        height: "7px",
+                                        borderRadius: "50%",
+                                        background: "#444",
+                                    }}
+                                />
+
+                                <span
+                                    style={{
+                                        width: "7px",
+                                        height: "7px",
+                                        borderRadius: "50%",
+                                        background: "#555",
+                                    }}
+                                />
+
+                            </div>
+
+
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    left: "50%",
+                                    transform: "translateX(-50%)",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "8px",
+                                    fontSize: "10px",
+                                    fontWeight: 800,
+                                    letterSpacing: ".16em",
+                                    color: "#aaa",
+                                }}
+                            >
+
+                                <span
+                                    style={{
+                                        color: "#ff5f00",
+                                        fontSize: "15px",
+                                    }}
+                                >
+                                    A
+                                </span>
+
+                                EXPERIENCE MANAGER
+
+                            </div>
+
+
+                            <div
+                                style={{
+                                    marginLeft: "auto",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "7px",
+                                    fontSize: "9px",
+                                    fontWeight: 800,
+                                    letterSpacing: ".14em",
+                                    color: "#888",
+                                }}
+                            >
+
+                                <span
+                                    style={{
+                                        width: "6px",
+                                        height: "6px",
+                                        borderRadius: "50%",
+                                        background: "#ff5f00",
+                                        boxShadow: "0 0 12px #ff5f00",
+                                    }}
+                                />
+
+                                LIVE DEMO
+
+                            </div>
+
+                        </div>
+
+
+                        {/* ================================================= */}
+                        {/* VIDEO */}
+                        {/* ================================================= */}
+
                         <video
-                            src="screenshots/aem.mov"
-                            controls
+                            src="screenshots/aem-demo.mov"
+                            autoPlay
+                            loop
+                            muted
                             playsInline
                             style={{
                                 width: "100%",
@@ -6826,24 +6999,26 @@ window.AEMCMSSlide = () => {
                             }}
                         />
 
-                        {/* TOP BADGE */}
+
+                        {/* AEM DEMO BADGE */}
 
                         <div
                             style={{
                                 position: "absolute",
-                                top: "18px",
-                                left: "18px",
+                                zIndex: 12,
+                                top: "62px",
+                                left: "20px",
                                 display: "flex",
                                 alignItems: "center",
                                 gap: "8px",
-                                padding: "9px 14px",
+                                padding: "8px 13px",
                                 borderRadius: "999px",
-                                background: "rgba(0,0,0,.78)",
+                                background: "rgba(0,0,0,.75)",
                                 backdropFilter: "blur(15px)",
-                                border: "1px solid rgba(255,255,255,.14)",
-                                fontSize: "10px",
+                                border: "1px solid rgba(255,255,255,.12)",
+                                fontSize: "9px",
                                 fontWeight: 800,
-                                letterSpacing: ".15em",
+                                letterSpacing: ".16em",
                                 color: "#fff",
                                 pointerEvents: "none",
                             }}
@@ -6864,30 +7039,18 @@ window.AEMCMSSlide = () => {
                         </div>
 
 
-                        {/* ORANGE CORNER */}
+                        {/* orange accent */}
 
                         <div
                             style={{
                                 position: "absolute",
+                                zIndex: 12,
                                 left: 0,
                                 bottom: 0,
-                                width: "260px",
-                                height: "4px",
+                                width: "320px",
+                                height: "3px",
                                 background:
                                     "linear-gradient(90deg, #ff5f00, transparent)",
-                                pointerEvents: "none",
-                            }}
-                        />
-
-                        <div
-                            style={{
-                                position: "absolute",
-                                right: 0,
-                                top: 0,
-                                width: "160px",
-                                height: "4px",
-                                background:
-                                    "linear-gradient(270deg, #ff5f00, transparent)",
                                 pointerEvents: "none",
                             }}
                         />
@@ -6897,50 +7060,152 @@ window.AEMCMSSlide = () => {
                 </div>
 
 
-                {/* ================= BOTTOM ================= */}
+                {/* ================================================= */}
+                {/* CREATE / MANAGE / PUBLISH */}
+                {/* ================================================= */}
 
                 <div
                     style={{
-                        width: "min(92vw, 1220px)",
+                        width: "min(92vw, 1160px)",
                         display: "flex",
-                        justifyContent: "space-between",
                         alignItems: "center",
-                        marginTop: "18px",
+                        justifyContent: "center",
+                        marginTop: "22px",
                     }}
                 >
-
-                    <div
-                        style={{
-                            fontSize: "11px",
-                            color: "#555",
-                            fontWeight: 700,
-                            letterSpacing: ".16em",
-                        }}
-                    >
-                        CREATE · MANAGE · PUBLISH
-                    </div>
 
                     <div
                         style={{
                             display: "flex",
                             alignItems: "center",
                             gap: "9px",
-                            fontSize: "12px",
-                            color: "#888",
                         }}
                     >
+
                         <span
                             style={{
-                                color: "#ff5f00",
-                                fontSize: "17px",
+                                width: "8px",
+                                height: "8px",
+                                borderRadius: "50%",
+                                background: "#ff5f00",
+                                boxShadow: "0 0 14px rgba(255,95,0,.7)",
+                            }}
+                        />
+
+                        <span
+                            style={{
+                                fontSize: "11px",
+                                fontWeight: 800,
+                                letterSpacing: ".16em",
+                                color: "#ddd",
                             }}
                         >
-                            →
+                            CREATE
                         </span>
 
-                        See what happens behind the screen
                     </div>
 
+
+                    <div
+                        style={{
+                            width: "90px",
+                            height: "1px",
+                            background:
+                                "linear-gradient(90deg, #ff5f00, rgba(255,95,0,.15))",
+                            margin: "0 18px",
+                        }}
+                    />
+
+
+                    <div
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "9px",
+                        }}
+                    >
+
+                        <span
+                            style={{
+                                width: "8px",
+                                height: "8px",
+                                borderRadius: "50%",
+                                background: "#ff5f00",
+                                boxShadow: "0 0 14px rgba(255,95,0,.7)",
+                            }}
+                        />
+
+                        <span
+                            style={{
+                                fontSize: "11px",
+                                fontWeight: 800,
+                                letterSpacing: ".16em",
+                                color: "#ddd",
+                            }}
+                        >
+                            MANAGE
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        style={{
+                            width: "90px",
+                            height: "1px",
+                            background:
+                                "linear-gradient(90deg, rgba(255,95,0,.15), #ff5f00)",
+                            margin: "0 18px",
+                        }}
+                    />
+
+
+                    <div
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "9px",
+                        }}
+                    >
+
+                        <span
+                            style={{
+                                width: "8px",
+                                height: "8px",
+                                borderRadius: "50%",
+                                background: "#ff5f00",
+                                boxShadow: "0 0 14px rgba(255,95,0,.7)",
+                            }}
+                        />
+
+                        <span
+                            style={{
+                                fontSize: "11px",
+                                fontWeight: 800,
+                                letterSpacing: ".16em",
+                                color: "#ddd",
+                            }}
+                        >
+                            PUBLISH
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                {/* bottom text */}
+
+                <div
+                    style={{
+                        marginTop: "12px",
+                        fontSize: "11px",
+                        color: "#555",
+                        letterSpacing: ".08em",
+                        textAlign: "center",
+                    }}
+                >
+                    FROM CONTENT CREATION → TO THE EXPERIENCE ON SCREEN
                 </div>
 
             </div>
@@ -6948,7 +7213,6 @@ window.AEMCMSSlide = () => {
         </div>
     );
 };
-
 /* ---------------- SLIDES ---------------- */
 
 window.Slides = [
