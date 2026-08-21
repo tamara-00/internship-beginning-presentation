@@ -6625,6 +6625,330 @@ window.AEMDemoSlide = () => {
     );
 };
 
+window.AEMCMSSlide = () => {
+
+    return (
+        <div
+            style={{
+                width: "100%",
+                height: "100%",
+                background: "#070707",
+                color: "#fff",
+                position: "relative",
+                overflow: "hidden",
+                fontFamily: "Inter, Arial, sans-serif",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+            }}
+        >
+
+            {/* ================= BACKGROUND ================= */}
+
+            <div
+                style={{
+                    position: "absolute",
+                    width: "900px",
+                    height: "900px",
+                    borderRadius: "50%",
+                    background: "rgba(255, 95, 0, 0.10)",
+                    filter: "blur(150px)",
+                    top: "-550px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                }}
+            />
+
+            <div
+                style={{
+                    position: "absolute",
+                    width: "500px",
+                    height: "500px",
+                    borderRadius: "50%",
+                    background: "rgba(255, 95, 0, 0.07)",
+                    filter: "blur(120px)",
+                    bottom: "-350px",
+                    right: "-200px",
+                }}
+            />
+
+            {/* subtle grid */}
+            <div
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    opacity: 0.045,
+                    backgroundImage: `
+                        linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)
+                    `,
+                    backgroundSize: "70px 70px",
+                }}
+            />
+
+            {/* ================= MAIN ================= */}
+
+            <div
+                style={{
+                    position: "relative",
+                    zIndex: 2,
+                    width: "92%",
+                    maxWidth: "1450px",
+                    height: "92%",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transform: "translateY(20%)",
+                }}
+            >
+
+                {/* TOP LABEL */}
+
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                        marginBottom: "14px",
+                        fontSize: "11px",
+                        fontWeight: 800,
+                        letterSpacing: ".22em",
+                        textTransform: "uppercase",
+                        color: "#ff5f00",
+                    }}
+                >
+                    <span
+                        style={{
+                            width: "7px",
+                            height: "7px",
+                            borderRadius: "50%",
+                            background: "#ff5f00",
+                            boxShadow: "0 0 18px #ff5f00",
+                        }}
+                    />
+
+                    Adobe Experience Manager
+                </div>
+
+
+                {/* TITLE */}
+
+                <h1
+                    style={{
+                        margin: 0,
+                        textAlign: "center",
+                        fontSize: "clamp(42px, 5vw, 72px)",
+                        lineHeight: 0.9,
+                        letterSpacing: "-0.065em",
+                        fontWeight: 800,
+                        marginBottom: "30px",
+                    }}
+                >
+                    BEHIND THE{" "}
+                    <span
+                        style={{
+                            color: "#ff5f00",
+                        }}
+                    >
+                        EXPERIENCE.
+                    </span>
+                </h1>
+
+
+                {/* ================= VIDEO FRAME ================= */}
+
+                <div
+                    style={{
+                        position: "relative",
+                        width: "min(92vw, 1220px)",
+                        height: "min(67vh, 610px)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
+
+                    {/* outer glow */}
+
+                    <div
+                        style={{
+                            position: "absolute",
+                            inset: "-20px",
+                            borderRadius: "30px",
+                            background:
+                                "radial-gradient(circle, rgba(255,95,0,.18), transparent 65%)",
+                            filter: "blur(25px)",
+                        }}
+                    />
+
+                    {/* orange frame */}
+
+                    <div
+                        style={{
+                            position: "absolute",
+                            inset: "-1px",
+                            borderRadius: "24px",
+                            border: "1px solid rgba(255,95,0,.35)",
+                            pointerEvents: "none",
+                        }}
+                    />
+
+                    {/* VIDEO */}
+
+                    <div
+                        style={{
+                            position: "relative",
+                            width: "100%",
+                            height: "100%",
+                            borderRadius: "22px",
+                            overflow: "hidden",
+                            background: "#050505",
+                            border: "1px solid rgba(255,255,255,.14)",
+                            boxShadow:
+                                "0 35px 100px rgba(0,0,0,.75)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+
+                        <video
+                            src="screenshots/aem.mov"
+                            controls
+                            playsInline
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "contain",
+                                display: "block",
+                                background: "#050505",
+                            }}
+                        />
+
+                        {/* TOP BADGE */}
+
+                        <div
+                            style={{
+                                position: "absolute",
+                                top: "18px",
+                                left: "18px",
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "8px",
+                                padding: "9px 14px",
+                                borderRadius: "999px",
+                                background: "rgba(0,0,0,.78)",
+                                backdropFilter: "blur(15px)",
+                                border: "1px solid rgba(255,255,255,.14)",
+                                fontSize: "10px",
+                                fontWeight: 800,
+                                letterSpacing: ".15em",
+                                color: "#fff",
+                                pointerEvents: "none",
+                            }}
+                        >
+
+                            <span
+                                style={{
+                                    width: "6px",
+                                    height: "6px",
+                                    borderRadius: "50%",
+                                    background: "#ff5f00",
+                                    boxShadow: "0 0 12px #ff5f00",
+                                }}
+                            />
+
+                            AEM DEMO
+
+                        </div>
+
+
+                        {/* ORANGE CORNER */}
+
+                        <div
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                                bottom: 0,
+                                width: "260px",
+                                height: "4px",
+                                background:
+                                    "linear-gradient(90deg, #ff5f00, transparent)",
+                                pointerEvents: "none",
+                            }}
+                        />
+
+                        <div
+                            style={{
+                                position: "absolute",
+                                right: 0,
+                                top: 0,
+                                width: "160px",
+                                height: "4px",
+                                background:
+                                    "linear-gradient(270deg, #ff5f00, transparent)",
+                                pointerEvents: "none",
+                            }}
+                        />
+
+                    </div>
+
+                </div>
+
+
+                {/* ================= BOTTOM ================= */}
+
+                <div
+                    style={{
+                        width: "min(92vw, 1220px)",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginTop: "18px",
+                    }}
+                >
+
+                    <div
+                        style={{
+                            fontSize: "11px",
+                            color: "#555",
+                            fontWeight: 700,
+                            letterSpacing: ".16em",
+                        }}
+                    >
+                        CREATE · MANAGE · PUBLISH
+                    </div>
+
+                    <div
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "9px",
+                            fontSize: "12px",
+                            color: "#888",
+                        }}
+                    >
+                        <span
+                            style={{
+                                color: "#ff5f00",
+                                fontSize: "17px",
+                            }}
+                        >
+                            →
+                        </span>
+
+                        See what happens behind the screen
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    );
+};
+
 /* ---------------- SLIDES ---------------- */
 
 window.Slides = [
@@ -6635,6 +6959,7 @@ window.Slides = [
     window.QATeam,
     window.SharedGoalSlide,
     window.EventPlatformSlide,
+    window.AEMCMSSlide,
     window.StartingPointSlide,
     window.FromVisionToWorkSlide,
     window.AEMDemoSlide,
